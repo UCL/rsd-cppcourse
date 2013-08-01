@@ -116,11 +116,11 @@ Instead of:
 ``` C++
 int main( int argc, char** argv) 
 {
-std::cout << "Hello world" << std::endl; 
+    std::cout << "Hello world" << std::endl; 
 }
 ```
 
-if you really want to. (But don't because one is much easier to read!)
-
-
+if you really want to. (But don't because one is much easier to read! We always end lines at the end of a line,
+and we always indent four spaces whenever we go inside a brace block, as a *coding convention*, not because we
+have to.)
 
