@@ -81,6 +81,9 @@ functionbody;
 }
 ```
 
+If you are of a computer-science type mindset, you might now be wanting to see the above syntax rule written 
+in a more formal way. Unfortunately for you, this is not that kind of course.
+
 The arguments to the main function are special: they are how the command line arguments get into the program.
 
 ###There are **types** everywhere
