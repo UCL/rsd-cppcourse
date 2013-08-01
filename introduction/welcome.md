@@ -46,6 +46,9 @@ the basics of these during this course, so these are not an absolute prerequisit
 * Unit testing
 * Build tools (such as make, scons or cmake)
 
+In order to meet these prerequisites, you could attend a [Software Carpentry](http://softwarecarpentry.org) course, 
+which are offered regularly around the world.
+
 How to follow the course
 ------------------------
 
