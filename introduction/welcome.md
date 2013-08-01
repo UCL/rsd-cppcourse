@@ -86,6 +86,6 @@ make
 ```
 
 You should have a terminal open and ready for this, and should be ``standing'' in the directory where you have
-obtained the starting course materials, as explained in 
+obtained the starting course materials, as explained in [preparing for the course](../appendices/preparation.md).
 
-So, you should now be ready to go to the [first section](../session1/) of the first chapter, as explained in preparing for the course](../appendices/preparation.md)
+So, you should now be ready to go to the [first section](../session1/) of the first chapter, and begin
