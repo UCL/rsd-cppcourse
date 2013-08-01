@@ -91,4 +91,16 @@ make
 You should have a terminal open and ready for this, and should be ``standing'' in the directory where you have
 obtained the starting course materials, as explained in [preparing for the course](../appendices/preparation.md).
 
+Note that at various points in the development of the example, we have tagged in the version control repository you
+checked out while preparing for the course, a version of the code which is our version of the code at that state.
+
+You can abandon your own current work, and revert to our version, by typing:
+
+``` Bash
+git reset --hard <tag name>
+```
+
+Where *tag name* represents the version you want to switch to. If you are more experienced with version control, you
+could even use these tags to merge our version into your own, resolving conflicts as appropriate.
+
 So, you should now be ready to go to the [first section](../session1/) of the first chapter, and begin
