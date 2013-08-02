@@ -258,7 +258,7 @@ ctest
 ```
 
 (Note that we needed to recompile with make, before rerunning the tests.)
-
+> ```
 > Running tests...
 > Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
 >    Start 1: ReactionSystemTest
@@ -272,15 +272,18 @@ ctest
 >           1 - ReactionSystemTest (Failed)
 > Errors while running CTest
 > make: *** [test] Error 8
+> ```
 
 ``` bash
 ctest --output-on-failure
 ```
 
+> ```
 > /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/test/ReactionSystemTest.cpp:7: Failure
 > Value of: mySystem.GetName()
 >  Actual: "SomeOtherName"
 > Expected: "SomeName"
+> ```
 
 Note the difference between the *expected* and *actual* values.
 
