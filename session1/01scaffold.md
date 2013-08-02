@@ -7,9 +7,9 @@ code that you have to type in to make a bare-minimum program. Some have more, an
 In the repository that you checked out in preparing for the course, we have given you basic boiler plate or "scaffold"
 code, so you do not have to type it from scratch.
 
-It would be very boring and confusing to explain every detail of the scaffold now, 
-but there are a few things worth noting, which we list here. Don't worry about not understanding everything in the
-scaffold files.
+In this first session, we're going to work slowly through the contents of this 'boiler plate' code, and see
+what we can learn about C++ from it. Don't worry about not understanding everything in the
+scaffold files at first, some of it is very complicated. But eventually, it should all make sense.
 
 Repository Layout
 -----------------
