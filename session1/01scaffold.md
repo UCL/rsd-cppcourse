@@ -68,7 +68,7 @@ In C++ there is a powerful *standard library*: we include things from the standa
 We include our own local other code with quotes:
 
 ``` c++
-#include "ReactionSystem.h"
+#include "Species.h"
 ```
 
 ###There is a main function
@@ -101,7 +101,7 @@ When we create a new variable, we have to specify it's type, and you can't just 
 Hence the line
 
 ``` c++
-ReactionSystem my_simple_reaction_system("Simple reaction system");
+Species calcium("Ca");
 ```
 
 The syntax here is:
@@ -110,7 +110,7 @@ The syntax here is:
 nameoftype variablename(initialisation-arguments);
 ```
 
-Note that the type here *ReactionSystem* is a type we've invented for ourselves. From the other languages you know,
+Note that the type here *Species* is a type we've invented for ourselves. From the other languages you know,
 you may be more familiar with types like string, integer, or boolean. C++ has those too, but in C++,
 we spend most of our time working with types we define ourselves: **class**es.
 
@@ -163,7 +163,7 @@ have to.)
 The reaction system header file
 -------------------------------
 
-Have a look in your editor at src/ReactionSystem.h
+Have a look in your editor at src/Species.h
 
 First of all, this file has a file extension ".h".
 
@@ -171,11 +171,11 @@ C++ and C source files come in two flavours: header files and non-header files.
 
 We use .h files to describe the **interfaces** to things, and .cpp files to actually define what they do.
 
-So we can describe, in src/ReactionSystem.h, that our user-defined type, or *class*, called ReactionSystem,
+So we can describe, in src/Species.h, that our user-defined type, or *class*, called Species,
 exists, and that it has a *member function* called GetName():
 
 ``` c++
-class ReactionSystem // A "class" is a user defined type with built-in functions
+class Species // A "class" is a user defined type with built-in functions
 {   
   std::string GetName(); // declare a member function takes no arguments, and returns a string.
 };
@@ -187,7 +187,7 @@ standard library. `std::` is used to refer to things from the standard library.
 because we've done this, when we have our reaction system, we can ask it for it's name:
 
 ``` c++
-my_simple_reaction_system.GetName();
+calcium.GetName();
 ```
 
 note the dot operator is used to get access to the method of the reaction system.
@@ -198,21 +198,21 @@ basics of "object" based programming. Such a user-defined type is called a class
 We note also that we define a function called the same as the name of the class:
 
 ``` c++
-ReactionSystem(std::string input_name);
+Species(std::string input_name);
 ```
 
 This describes a special function called a *constructor* which is used by the 
-language for making new ReactionSystems. We invoked
+language for making new Speciess. We invoked
 it in the main function when we said:
 
 ```c++
-ReactionSystem my_simple_reaction_system("Simple reaction system");
+Species calcium("Ca");
 ```
 
 We also define that the class has a member *variable* as well as member functions, to store the name:
 
 ```c++
-class ReactionSystem
+class Species
 {   
 private:
   std::string name;
@@ -222,9 +222,9 @@ private:
 In principle, we could access this directly with a dot in outer code:
 
 ```c++
-std::cout << my_system.name << std::endl;
+std::cout << calcium.name << std::endl;
 # Instead of:
-std::cout << my_system.GetName() << std::endl;
+std::cout << calcium.GetName() << std::endl;
 ```
 
 however, we might in future change the way the name of a system is stored, so it is traditional good practice
@@ -234,7 +234,7 @@ If we try this, we get an error message on compiling with `make`:
 
 > ```
 > /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/reactor.cpp:15:126: 
-> error: 'name' is a private member of 'ReactionSystem'
+> error: 'name' is a private member of 'Species'
 > ```
 
 
@@ -248,13 +248,13 @@ inspecting the output to check things are OK. A better way, however, is to write
 code which verify each subroutine or class does what is expected. We write many such small tests, and keep running them
 whenever we make a change. That way, we can be sure that our new changes haven't broken old functionality.
 
-Look at the file test/ReactionSystemTest.cpp:
+Look at the file test/SpeciesTest.cpp:
 
 ``` c++
 // Test that the system has a name as expected.
-TEST(ReactionSystemTest, SystemHasAName) { // First argument is test group, second is test name
-  ReactionSystem mySystem("SomeName"); // Create a reaction system with a specified name
-  EXPECT_EQ("SomeName", mySystem.GetName()); // Assert that the name should be as expected
+TEST(SpeciesTest, SpeciesHasAName) { // First argument is test group, second is test name
+  Species mySpecies("SomeName"); // Create a species with a specified name
+  EXPECT_EQ("SomeName", mySpecies.GetName()); // Assert that the name should be as expected
 }
 ```
 
@@ -271,8 +271,8 @@ and should see:
 > ```
 > Running tests...
 > Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
->     Start 1: ReactionSystemTest
-> 1/1 Test #1: ReactionSystemTest ...............   Passed    0.02 sec
+>     Start 1: SpeciesTest
+> 1/1 Test #1: SpeciesTest ...............   Passed    0.02 sec
 > 
 > 100% tests passed, 0 tests failed out of 1
 > 
@@ -281,8 +281,8 @@ and should see:
 
 try modifying the test so it should fail:
 ``` Diff
-- ReactionSystem mySystem("SomeName");
-+ ReactionSystem mySystem("SomeOtherName");
+- Species mySpecies("SomeName");
++ Species mySpecies("SomeOtherName");
 ```
 
 ``` bash
@@ -294,15 +294,15 @@ ctest
 > ```
 > Running tests...
 > Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
->    Start 1: ReactionSystemTest
-> 1/1 Test #1: ReactionSystemTest ...............***Failed    0.01 sec
+>    Start 1: SpeciesTest
+> 1/1 Test #1: SpeciesTest ...............***Failed    0.01 sec
 >
 > 0% tests passed, 1 tests failed out of 1
 > 
 > Total Test time (real) =   0.02 sec
 >
 > The following tests FAILED:
->           1 - ReactionSystemTest (Failed)
+>           1 - SpeciesTest (Failed)
 > Errors while running CTest
 > make: *** [test] Error 8
 > ```
@@ -312,8 +312,8 @@ ctest --output-on-failure
 ```
 
 > ```
-> /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/test/ReactionSystemTest.cpp:7: Failure
-> Value of: mySystem.GetName()
+> /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/test/SpeciesTest.cpp:7: Failure
+> Value of: mySpecies.GetName()
 >  Actual: "SomeOtherName"
 > Expected: "SomeName"
 > ```
@@ -324,13 +324,13 @@ Put your code back right again. (Use version control if you know how, or just ed
 
 Note that in future, as we code, we will add new tests for our new functionality.
 
-The ReactionSystem definition file
-----------------------------------
+The Species definition file
+---------------------------
 
 So, with a test defined to prove that the code works as intended, we can look at the implementation of GetName():
 
 ``` c++
-std::string ReactionSystem::GetName() 
+std::string Species::GetName() 
 { 
 	return name;
 }
@@ -339,7 +339,7 @@ std::string ReactionSystem::GetName()
 and the constructor could be defined as:
 
 ``` c++
-ReactionSystem::ReactionSystem(std::string input_name)
+Species::Species(std::string input_name)
 {
         name = input_name;
 }
@@ -348,7 +348,7 @@ ReactionSystem::ReactionSystem(std::string input_name)
 in fact we do something different:
 
 ``` c++
-ReactionSystem::ReactionSystem(std::string input_name)
+Species::Species(std::string input_name)
          : name(input_name)
 {
 }
@@ -368,7 +368,7 @@ define our tests and libraries, and downloading the Google C++ Testing framework
 One thing worth noting is that with lines like:
 
 ``` CMake
-add_library(reactor_library ReactionSystem.cpp)
+add_library(reactor_library Species.cpp)
 ```
 
 we have to specify manually the source files which go into our library. If we want to add other files,
