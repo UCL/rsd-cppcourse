@@ -374,6 +374,9 @@ we will need to tell CMake:
 add_library(reactor_library ReactionSystem.cpp Reaction.cpp Species.cpp)
 ```
 
+What next?
+----------
+
 Those following along in the description will notice some stuff I've not bothered explaining:
 
 I've been writing `std::string` here when the file has `const std::string &`. What in the world is this all about?
