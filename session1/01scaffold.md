@@ -237,6 +237,7 @@ ctest
 
 and should see:
 
+> ```
 > Running tests...
 > Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
 >     Start 1: ReactionSystemTest
@@ -245,6 +246,7 @@ and should see:
 > 100% tests passed, 0 tests failed out of 1
 > 
 > Total Test time (real) =   0.02 sec
+> ```
 
 try modifying the test so it should fail:
 ``` Diff
