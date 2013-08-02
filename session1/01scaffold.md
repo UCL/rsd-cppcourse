@@ -205,6 +205,33 @@ it in the main function when we said:
 ReactionSystem my_simple_reaction_system("Simple reaction system");
 ```
 
+We also define that the class has a member *variable* as well as member functions, to store the name:
+
+```c++
+class ReactionSystem
+{   
+private:
+  std::string name;
+}
+```
+
+In principle, we could access this directly with a dot in outer code:
+
+```c++
+std::cout << my_system.name << std::endl;
+# Instead of:
+std::cout << my_system.GetName() << std::endl;
+```
+
+however, we might in future change the way the name of a system is stored, so it is traditional good practice
+never to directly access member variables. We *enforce* that the user of our class doesn't try this with `private`.
+
+If we try this, we get an error message on compiling with `make`:
+
+> ```
+> /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/reactor.cpp:15:126: 
+> error: 'name' is a private member of 'ReactionSystem'
+> ```
 
 
 The reaction system test file
