@@ -45,12 +45,7 @@ C++ is a **compiled language** : you cannot just 'run' the source code: you must
 the source code into an *executable* which you run. 
 
 Many bugs in your program will show up when you try to do this: the 
-*compiler* cannot compile buggy code. There's a lot of subtlety to the build process: *compiling* and *linking* code
-which, to be expert in C++, you will eventually need to understand. To see the full horror of this, try typing:
-
-``` Bash
-c++ --help
-```
+*compiler* cannot compile buggy code. There's a lot of subtlety to the build process: *compiling* and *linking*.
 
 Fortunately, we do not have to get to grips with all this now. For this course, we'll be using **CMake** a *build tool*
 which hides a lot of the complexity of the compiling and linking process. Our instructions on how to
