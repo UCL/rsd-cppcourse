@@ -110,6 +110,10 @@ The syntax here is:
 nameoftype variablename(initialisation-arguments);
 ```
 
+Note that the type here *ReactionSystem* is a type we've invented for ourselves. From the other languages you know,
+you may be more familiar with types like string, integer, or boolean. C++ has those too, but in C++,
+we spend most of our time working with types we define ourselves: **class**es.
+
 The intialisation arguments can be optional, depending on the type of thing you're declaring, and there
 are a few different styles to choose from, so you can write:
 
