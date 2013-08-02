@@ -186,5 +186,86 @@ my_simple_reaction_system.GetName();
 note the dot operator is used to get access to the method of the reaction system.
 
 This, the defining of user-defined types which contain their own custom built-in functions, defines the
-basics of "object" based programming.
+basics of "object" based programming. Such a user-defined type is called a class. We will talk more about the basics
+of classes later in the session.
 
+The reaction system test file
+-----------------------------
+
+When we program, we want to know that our code works as expected.
+
+Newer programmers tend to do this in an ad-hoc fashion, working with a main program that they thing should work, and
+inspecting the output to check things are OK. A better way, however, is to write *automated tests*, small pieces of
+code which verify each subroutine or class does what is expected. We write many such small tests, and keep running them
+whenever we make a change. That way, we can be sure that our new changes haven't broken old functionality.
+
+Look at the file test/ReactionSystemTest.cpp:
+
+``` c++
+// Test that the system has a name as expected.
+TEST(ReactionSystemTest, SystemHasAName) { // First argument is test group, second is test name
+  ReactionSystem mySystem("SomeName"); // Create a reaction system with a specified name
+  EXPECT_EQ("SomeName", mySystem.GetName()); // Assert that the name should be as expected
+}
+```
+
+Here we define an *expectation*: something which should be true, in this case, that the system name should be as defined.
+
+You can run this test with
+
+``` bash
+ctest
+```
+
+and should see:
+
+> Running tests...
+> Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
+>     Start 1: ReactionSystemTest
+> 1/1 Test #1: ReactionSystemTest ...............   Passed    0.02 sec
+> 
+> 100% tests passed, 0 tests failed out of 1
+> 
+> Total Test time (real) =   0.02 sec
+
+try modifying the test so it should fail:
+``` Diff
+- ReactionSystem mySystem("SomeName");
++ ReactionSystem mySystem("SomeOtherName");
+```
+
+``` bash
+make
+ctest
+```
+
+(Note that we needed to recompile with make, before rerunning the tests.)
+
+> Running tests...
+> Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
+>    Start 1: ReactionSystemTest
+> 1/1 Test #1: ReactionSystemTest ...............***Failed    0.01 sec
+>
+> 0% tests passed, 1 tests failed out of 1
+> 
+> Total Test time (real) =   0.02 sec
+>
+> The following tests FAILED:
+>           1 - ReactionSystemTest (Failed)
+> Errors while running CTest
+> make: *** [test] Error 8
+
+``` bash
+ctest --output-on-failure
+```
+
+> /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/test/ReactionSystemTest.cpp:7: Failure
+> Value of: mySystem.GetName()
+>  Actual: "SomeOtherName"
+> Expected: "SomeName"
+
+Note the difference between the *expected* and *actual* values.
+
+Put your code back right again. (Use version control if you know how, or just edit it back.)
+
+Note that in future, as we code, we will add new tests for our new functionality.
