@@ -325,3 +325,57 @@ The ReactionSystem definition file
 
 So, with a test defined to prove that the code works as intended, we can look at the implementation of GetName():
 
+``` c++
+std::string ReactionSystem::GetName() 
+{ 
+	return name;
+}
+```
+
+and the constructor could be defined as:
+
+``` c++
+ReactionSystem::ReactionSystem(std::string input_name)
+{
+        name = input_name;
+}
+```
+
+in fact we do something different:
+
+``` c++
+ReactionSystem::ReactionSystem(std::string input_name)
+         : name(input_name)
+{
+}
+```
+
+which means the same thing: it's so common for constructors just to boringly pass on arguments like this,
+that the language designers created a shortcut.
+
+The CMakeLists.txt build tool files
+-----------------------------------
+
+Finally for our tour of the scaffold, have a look at the top-level CMakeLists.txt file.
+
+There's a lot of tedious stuff here, defining our executable, linking to lower level CMakeLists.txt files which
+define our tests and libraries, and downloading the Google C++ Testing framework from the internet.
+
+One thing worth noting is that with lines like:
+
+``` CMake
+add_library(reactor_library ReactionSystem.cpp)
+```
+
+we have to specify manually the source files which go into our library. If we want to add other files,
+we will need to tell CMake:
+
+``` CMake
+add_library(reactor_library ReactionSystem.cpp Reaction.cpp Species.cpp)
+```
+
+Those following along in the description will notice some stuff I've not bothered explaining:
+
+I've been writing `std::string` here when the file has `const std::string &`. What in the world is this all about?
+
+To find that out, look at the next session on [Qualified Types](02qualified_types.md)
