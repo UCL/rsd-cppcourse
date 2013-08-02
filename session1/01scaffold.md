@@ -7,7 +7,9 @@ code that you have to type in to make a bare-minimum program. Some have more, an
 In the repository that you checked out in preparing for the course, we have given you basic boiler plate or "scaffold"
 code, so you do not have to type it from scratch.
 
-It would be very boring and confusing to explain every detail of the scaffold now, but there are a few things worth noting:
+It would be very boring and confusing to explain every detail of the scaffold now, 
+but there are a few things worth noting, which we list here. Don't worry about not understanding everything in the
+scaffold files.
 
 Repository Layout
 -----------------
@@ -58,14 +60,20 @@ CMakeLists.txt file in the repository. You will see comments which explain some 
 The main program
 ----------------
 
-Have a look at the src/main.cpp file in your editor. You will see comments which explain some of what this file does.
+Have a look at the reactor.cpp file in your editor. You will see comments which explain some of what this file does.
 
-###There is a line which "includes" a library.
+###There are lines which "include" libraries or other source files.
 
 In C++ there is a powerful *standard library*: we include things from the standard library with angle brackets:
 
 ``` c++
 #include <iostream>
+```
+
+We include our own local other code with quotes:
+
+``` c++
+#include "ReactionSystem.h"
 ```
 
 ###There is a main function
@@ -92,6 +100,35 @@ C++ is a *strongly typed* language. This will be a major part of what we learn t
 There are types like *int* for an integer, and *char* for a letter. Unlike most other languages you probably know, 
 you have to explicitly tell the compiler what kind of thing each variable is, and which kind of thing each
 function returns. You do this by liberally sprinkling the names of types throughout your code.
+
+When we create a new variable, we have to specify it's type, and you can't just use a variable without doing so.
+
+Hence the line
+
+``` c++
+ReactionSystem my_simple_reaction_system("Simple reaction system");
+```
+
+The syntax here is:
+
+``` c++
+nameoftype variablename(initialisation-arguments);
+```
+
+The intialisation arguments can be optional, depending on the type of thing you're declaring, and there
+are a few different styles to choose from, so you can write:
+
+``` c++
+int five(5); // Create an integer variable called five, intialised to 5.
+
+int six; // Create an integer variable called six, don't initialise.
+six=6; // Set it to six.
+
+int seven = 7; // Create an integer variable called seven, put 7 in it.
+
+```
+
+to declare an integer variables.
 
 ###There are plenty of semicolons and braces
 
@@ -123,4 +160,36 @@ int main( int argc, char** argv)
 if you really want to. (But don't because one is much easier to read! We always end lines at the end of a line,
 and we always indent four spaces whenever we go inside a brace block, as a *coding convention*, not because we
 have to.)
+
+The reaction system header file
+-------------------------------
+
+Have a look in your editor at src/ReactionSystem.h
+
+First of all, this file has a file extension ".h".
+
+C++ and C source files come in two flavours: header files and non-header files.
+
+We use .h files to describe the **interfaces** to things, and .cpp files to actually define what they do.
+
+So we can describe, in src/ReactionSystem.h, that our user-defined type, or *class*, called ReactionSystem,
+exists, and that it has a *member function* called GetName():
+
+``` c++
+class ReactionSystem // A "class" is a user defined type with built-in functions
+{   
+  std::string GetName(); // declare a member function takes no arguments, and returns a string.
+};
+```
+
+because we've done this, when we have our reaction system, we can ask it for it's name:
+
+``` c++
+my_simple_reaction_system.GetName();
+```
+
+note the dot operator is used to get access to the method of the reaction system.
+
+This, the defining of user-defined types which contain their own custom built-in functions, defines the
+basics of "object" based programming.
 
