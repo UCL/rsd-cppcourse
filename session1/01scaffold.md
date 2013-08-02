@@ -177,6 +177,9 @@ class ReactionSystem // A "class" is a user defined type with built-in functions
 };
 ```
 
+Here, `std::string` refers to the string type, which is not a part of the C++ language itself, but is part of the
+standard library. `std::` is used to refer to things from the standard library.
+
 because we've done this, when we have our reaction system, we can ask it for it's name:
 
 ``` c++
@@ -186,8 +189,23 @@ my_simple_reaction_system.GetName();
 note the dot operator is used to get access to the method of the reaction system.
 
 This, the defining of user-defined types which contain their own custom built-in functions, defines the
-basics of "object" based programming. Such a user-defined type is called a class. We will talk more about the basics
-of classes later in the session.
+basics of "object" based programming. Such a user-defined type is called a class.
+
+We note also that we define a function called the same as the name of the class:
+
+``` c++
+ReactionSystem(std::string input_name);
+```
+
+This describes a special function called a *constructor* which is used by the 
+language for making new ReactionSystems. We invoked
+it in the main function when we said:
+
+```c++
+ReactionSystem my_simple_reaction_system("Simple reaction system");
+```
+
+
 
 The reaction system test file
 -----------------------------
@@ -269,3 +287,9 @@ Note the difference between the *expected* and *actual* values.
 Put your code back right again. (Use version control if you know how, or just edit it back.)
 
 Note that in future, as we code, we will add new tests for our new functionality.
+
+The ReactionSystem definition file
+----------------------------------
+
+So, with a test defined to prove that the code works as intended, we can look at the implementation of GetName():
+
