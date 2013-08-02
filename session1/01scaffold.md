@@ -53,8 +53,8 @@ c++ --help
 ```
 
 Fortunately, we do not have to get to grips with all this now. For this course, we'll be using **CMake** a *build tool*
-which hides a lot of the complexity of the compiling and linking process. In your editor, have a look at the 
-CMakeLists.txt file in the repository. You will see comments which explain some of what this file does.
+which hides a lot of the complexity of the compiling and linking process. Our instructions on how to
+build the program are described in the file CMakeLists.txt, which we will look at later.
 
 
 The main program
