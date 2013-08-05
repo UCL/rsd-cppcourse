@@ -33,7 +33,7 @@ numbers.push_back(1);
 numbers.push_back(2);
 numbers.push_back(3);
 
-for (std::vector<int>::iterator value=numbers.start();value++;value!=numbers.end()){
+for (std::vector<int>::iterator value=numbers.start(); value != numbers.end(); ++value){
 	std::cout << *value << std::endl;
 }
 ```
@@ -56,11 +56,9 @@ So, if you want code that runs really fast, especially on state of the art super
 There's a new version of C++, C++11, which is better than the old version. The above fragment can be written in C++11 as:
 
 ``` C++
-std::vector<int> numbers={1,2,3};
+std::vector<int> numbers{ 1, 2, 3};
 
-for (auto value : numbers){
-	std::cout << value << std::endl;
-}
+for (auto value : numbers) std::cout << value << std::endl;
 ```
 
 but this isn't supported everywhere yet, so you'll need to decide
