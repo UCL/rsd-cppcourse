@@ -3,7 +3,7 @@ Why C++?
 
 This course assumes you already know how to program for science in some other language.
 
-This might be Python, MATLAB, Perl, Ruby. C or FORTRAN.
+This might be Python, MATLAB, Perl, Ruby, Java, C or FORTRAN.
 
 Compared to these, C++ is a difficult, cumbersome, and confusing language. 
 
