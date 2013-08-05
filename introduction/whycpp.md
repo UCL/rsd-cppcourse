@@ -53,12 +53,26 @@ are better in these languages.
 
 So, if you want code that runs really fast, especially on state of the art supercomputers, then you might want to use C++, C, or FORTRAN.
 
+There's a new version of C++, C++11, which is better than the old version. The above fragment can be written in C++11 as:
+
+``` C++
+std::vector<int> numbers={1,2,3};
+
+for (auto value : numbers){
+	std::cout << value << std::endl;
+}
+```
+
+but this isn't supported everywhere yet, so you'll need to decide
+whether to use these new features, which make C++ easier to learn and use, but mean your code will run in less places. In this course, 
+we teach the old-style C++, but will occasionally mention the C++11 versions for future awareness.
+
 C++ from C or FORTRAN
 ---------------------
 
-If you're used to programming Python or Perl, C++ makes available some of the features you'll have grown to expect: containers like
+If you're used to programming Python or Perl, C++, unlike C or FORTRAN, makes available some of the features you'll have grown to expect: containers like
 associative arrays (hashes) and lists, exceptions, stream-based IO, and, of course, object orientation. Support for these, and for good programming
-practices like testing, is much stronger than in FORTRAN or C.
+practices like testing, is much stronger in C++ than in FORTRAN or C.
 
 In C++, I can do things like
 
@@ -68,8 +82,8 @@ Moments::InertiaTensor(protein_database["amylase"].GetCoordinateArray());
 
 which is, in my view, easier to read than the equivalent might be in FORTRAN or C, and almost as pretty as it would be in Python.
 
-But, because C++ is much more complicated, it is harder for the compiler to produce really efficient machine code, so C++ programs tend to be a bit slower
-than FORTRAN code. You can view C++ as a half-way-house in terms of flexibility and expressiveness between Python and FORTRAN.
+But, because C++ is much more complicated, it is harder for the compiler to produce really efficient machine code, so C++ programs tend on average to be a bit slower
+than FORTRAN code. You can view C++ as a half-way-house in terms of flexibility and efficiency between Python and FORTRAN.
 
 Note that C is a subset of C++, so if you want to, you can use as much or as little C++ as you like: you can write as if you were writing a C program, but just use C++'s list
 container, or just use stream-based IO. This style (writing C, but targeting a C++ compiler) might be a good place to start.
@@ -85,12 +99,11 @@ C++ is:
 But C++ is:
 
 * Complicated, error-prone, and difficult to learn.
-* Usually slower than C or FORTRAN.
+* Harder than C or FORTRAN to make really fast.
 * More verbose and less expressive than Python, Perl, MATLAB, Mathematica or Ruby.
 * Cumbersome to get running, with a bewildering choice of compilers and variants.
 
-There's a new C++ variant, C++11, which is better than the old version, but this isn't supported yet, so you'll need to decide
-whether to use these new features, which make C++ easier to learn and use, but mean your code will run in less places.
+
 
 Our view is that despite these problems, C++ is a good choice for future scientific programmers to learn as a *second* scientific programming language: 
 it introduces object orientation and dynamic data structures if you're coming from C or FORTRAN, 
