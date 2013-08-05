@@ -101,9 +101,7 @@ But C++ is:
 * Complicated, error-prone, and difficult to learn.
 * Harder than C or FORTRAN to make really fast.
 * More verbose and less expressive than Python, Perl, MATLAB, Mathematica or Ruby.
-* Cumbersome to get running, with a bewildering choice of compilers and variants.
-
-
+* Tough to get running, with hard-to-install libraries and cumbersome build tools.
 
 Our view is that despite these problems, C++ is a good choice for future scientific programmers to learn as a *second* scientific programming language: 
 it introduces object orientation and dynamic data structures if you're coming from C or FORTRAN, 
