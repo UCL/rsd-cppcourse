@@ -81,7 +81,8 @@ Moments::InertiaTensor(protein_database["amylase"].GetCoordinateArray());
 which is, in my view, easier to read than the equivalent might be in FORTRAN or C, and almost as pretty as it would be in Python.
 
 But, because C++ is much more complicated, it is harder for the compiler to produce really efficient machine code, so C++ programs tend on average to be a bit slower
-than FORTRAN code. You can view C++ as a half-way-house in terms of flexibility and efficiency between Python and FORTRAN.
+than FORTRAN code. It is possible to craft C++ which is just as fast as C or FORTRAN, but naively used, C++ can often be slower. As always, it is a good idea to
+profile your code before attempting optimisation.
 
 Note that C is a subset of C++, so if you want to, you can use as much or as little C++ as you like: you can write as if you were writing a C program, but just use C++'s list
 container, or just use stream-based IO. This style (writing C, but targeting a C++ compiler) might be a good place to start.
@@ -103,7 +104,7 @@ But C++ is:
 
 Our view is that despite these problems, C++ is a good choice for future scientific programmers to learn as a *second* scientific programming language: 
 it introduces object orientation and dynamic data structures if you're coming from C or FORTRAN, 
-and pointers and strict typing if you're coming from Python or MATLAB. 
+and pointers, memory management, and strict typing if you're coming from Python or MATLAB. 
 If you're an aspiring computational scientist, you'll need to get to grips with all these concepts
 eventually, so C++ is a good learning exercise. Once you've learned C++ as your second language, 
 you'll have the vocabulary and concepts you need to learn many other languages.
