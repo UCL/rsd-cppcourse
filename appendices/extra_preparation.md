@@ -26,7 +26,9 @@ Subversion is pre-installed on OSX
 
 Just do
 
-   brew install cmake
+``` Bash
+brew install cmake
+```
 
 ## Windows Users ##
 
