@@ -2,7 +2,7 @@
 
 This document contains instructions for installation of the packages
 we'll be using during the RITS Autumn 2013 C++ course, for those who have already followed the setup instructions for the 2013
-software carpentry course.
+the Autumn software carpentry course.
 
 ## Linux Users ##
 
@@ -26,7 +26,9 @@ Subversion is pre-installed on OSX
 
 Just do
 
-    brew install cmake
+``` Bash
+brew install cmake
+```
 
 ## Windows Users ##
 
