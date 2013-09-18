@@ -1,3 +1,0 @@
-Qualified Types
-===============
-

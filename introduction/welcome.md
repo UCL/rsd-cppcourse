@@ -103,4 +103,24 @@ git reset --hard <tag name>
 Where *tag name* represents the version you want to switch to. If you are more experienced with version control, you
 could even use these tags to merge our version into your own, resolving conflicts as appropriate.
 
-So, you should now be ready to go to the [first section](../session1/) of the first chapter, and begin
+The example problem
+-------------------
+
+In this course, we're going to build a complete program capable of simulating mass-action chemical kinetics.
+We will define a file parser which loads files which specify several reactions, containing a variety of species.
+We will implement code which calculates the rates of these reactions given their concentrations, according to the usual
+mass-action rules. (Where the rate of the reaction is proportional to the concentrations of the reactants.)
+We will use a library to numerically solve the resulting ordinary differential equations, and we will produce output
+which can be plotted to show a graph of the concentrations as it proceeds.
+
+If you're not a chemist, this is exactly the same mathematics which is often used to describe the variation of populations of competing species,
+or many other kinds of problem. We've chosen this example because it's relevant to many different areas of research.
+
+Let's start
+-----------
+
+So, you should now be ready to go to the [first section](../session1/) of the first chapter, and begin. The notes in
+this document are not intended to be a comprehensive textbook. They are the tutor's notes for delivery of the course,
+and are provided to trainees as an aide memoir. This is a practical course, and the purpose is to give trainees a
+feel for the use of the language. You will want to supplement this treatment with a good textbook 
+or [online tutorial](http://www.cplusplus.com/doc/tutorial/).
