@@ -10,6 +10,8 @@ Install the appropriate package with apt-get or yum, for example:
 sudo apt-get install boost
 ```
 
+Check that your package manager is delivering at least version 1.53, if you have an earlier version, you will need to downlaod from source, following the windows instructions below.
+
 ## Mac Users ##
 
 ``` Bash
@@ -39,7 +41,11 @@ unzip boost.zip
 Now, before we next build, we will need to tell our shell where the boost library can be found
 
 ```Bash
-export CMAKE_INCLUDE_PATH = /home/myusername/devel/libraries/boost_1_54_0
+cd build
+export CMAKE_INCLUDE_PATH=/home/myusername/devel/libraries/boost_1_54_0
+cmake ..
+make
+ctest
 ```
 
 ... or your equivalent.
