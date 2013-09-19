@@ -84,13 +84,47 @@ If we try this, we get an error message on compiling with `make`:
 > error: 'name' is a private member of 'Species'
 > ```
 
+Namespaces
+----------
+
+When you are working with other people's code, it can be very very annoying if they have a class called Solver or some other common name,
+and so do you. Your code is working fine, you bring in their library, and suddenly there's a bug because you're both using something with the same name.
+
+To get around this problem C++ allows `namespaces`. Something in a namespace must be referenced with the name preceding it like we saw in the main program:
+
+``` C++
+reactor::Species myspecies;
+```
+
+We can surround a section of code with a namespace declaration, as we do in Species.h:
+
+``` C++
+namespace reactor
+{
+  class Species
+  {
+  	...
+  }
+}
+
+Everything declared inside the namespace declaration becomes part of the namespace, and it is not necessary to explitly reference it with a `namespace::` declaration.
+
+Finally, as in our test file, you can simply import everything from a namespace into another one, including the default global namespace:
+
+```C++
+	using namespace reactor;
+```
+
+We can now see that in `std::string` we're referencing `string` from the `std` namespace. Some programmers just import the `std` namespace with `using namespace std`, but
+I recommend against that practice: in general it's better to spend a few extra characters for more clarity. There is a saying for this "explicit is better than implicit."
+
 The Species definition file
 ---------------------------
 
 We can now look at the implementation of these methods in `species.cpp`:
 
 ``` c++
-std::string Species::GetName() 
+std::string reactor::Species::GetName() 
 { 
 	return name;
 }
@@ -104,7 +138,7 @@ We would like to change the internals of the class more often than we change the
 Now, the constructor could be defined as:
 
 ``` c++
-Species::Species(std::string input_name)
+reactor::Species::Species(std::string input_name)
 {
         name = input_name;
 }
@@ -113,14 +147,21 @@ Species::Species(std::string input_name)
 in fact we do something different:
 
 ``` c++
-Species::Species(std::string input_name)
+reactor::Species::Species(std::string input_name)
          : name(input_name)
 {
 }
 ```
 
 which means **exactly** the same thing: it's so common for constructors just to boringly pass on arguments like this,
-that the language designers created a shortcut. (We call this "syntactic sugar"!)
+that the language designers created a shortcut, called an initialiser-list. (We call this "syntactic sugar"!)
+Where no confusion can occur, if using an initialiser-list, the standard even allows constructor arguments and member data to have the same name, so we could have written:
+
+``` c++
+reactor::Species::Species(std::string name)
+         : name(name)
+{
+}
 
 Const correctness
 -----------------

@@ -21,4 +21,4 @@ The class is going to need the ability to store a reaction rate, with a getter a
 
 The git tag for our solution to this exercise is v1.4.
 
-Session one of the course is now complete.
+Finally, have a look at some [new coding points](08fixtures.md) introduced in our solution for this exercise.

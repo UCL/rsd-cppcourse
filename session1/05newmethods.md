@@ -46,5 +46,7 @@ Don't forget, as you make reasonable-sized changes to your code, to commit to ve
 
 My solution here is tag `1.2`
 
-Go to the [second and final exercise](06newclass.md) for this session.
+Have a look at a [new coding concept](06inlinedefinitions.md) introduced in our solutions.
+
+
 

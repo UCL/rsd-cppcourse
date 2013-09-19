@@ -47,7 +47,7 @@ When we create a new variable, we have to specify it's type, and you can't just 
 Hence the line
 
 ``` c++
-Species calcium("Ca");
+reactor::Species calcium("Ca");
 ```
 
 The syntax here is:
