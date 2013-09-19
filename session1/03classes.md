@@ -163,6 +163,38 @@ reactor::Species::Species(std::string name)
 {
 }
 
+Once Guards
+-----------
+
+If we accidentally include two classes which both include the same class, we can get confused because the header definition will be included twice.
+To get around this problem, we use something called a "once guard".
+
+The C++ compiler recognises something called "macros": an old-fashioned way of defining symbols like this:
+
+``` C++
+#define PI 3.141 // Macro: not recommended
+const double pi=3.141 // Better, use C++ const
+```
+
+We won't use macros in this course, except for one thing: to avoid double-compilation of headers.
+
+By combining a #ifndef statement, which produces "conditional compilation", where code is only compiled if a given macro has not been defined:
+
+``` C++
+#ifndef FOO
+// only do this code if the macro FOO has not been defined
+#endif
+```
+
+with the definition of the macro inside the conditional block, we get a piece of code which is guaranteed to be compiled only once per "compilation unit":
+
+```
+#infdef ONCE_FILE_NAME
+#define ONCE_FILE_NAME
+// Code here safe from multiple compilation
+#endif // ONCE_FILE_NAME
+```
+
 Const correctness
 -----------------
 
