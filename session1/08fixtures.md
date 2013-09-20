@@ -9,6 +9,8 @@ We use the term "fixture" to refer to a standard set of inputs used for tests. T
 
 In the GoogleTest C++ testing framework, we can declare fixtures as classes, and access them in our tests as objects.
 
+##Testing Reaction with Fixtures
+
 Using a fixture, our ReactionTest code looks like:
 
 

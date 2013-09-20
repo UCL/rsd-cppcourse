@@ -3,7 +3,7 @@ Exercise: The reaction rate class
 
 ## Adding the new class
 
-We're going to add the class for the reaction.
+We're going to add the class to model reactions.
 
 So far, we don't want it to *do* anything, just to exist and be able to be instantiated.
 
@@ -14,10 +14,12 @@ This exercise is tedious -- if you use an IDE such as Microsoft Visual C++ or Ec
 You'll need to create interface and implementation files for Reaction. You'll need a new test file, and you'll need to add to the relevant CMakeLists.txt files to tell the compiler
 to compile these files.
 
-The git tag for our solution to this exercise is v1.3.
+## Comparing with my answers
+
+The git tag for our solution to this exercise is `v1.3`
 
 ## Adding a Reaction Rate to the class
 
 The class is going to need the ability to store a reaction rate, with a getter access method and ability to set the rate in the constructor. Add this with new tests.
 
-The git tag for our solution to this exercise is v1.4.
+The git tag for our solution to this exercise is `v1.4`.

@@ -1,14 +1,18 @@
 Testing
 =======
 
-##Introduction
+##Automated Tests
 
 When we program, we want to know that our code works as expected.
 
 Newer programmers tend to do this in an ad-hoc fashion, working with a main program that they thing should work, and
-inspecting the output to check things are OK. A better way, however, is to write *automated tests*, small pieces of
+inspecting the output to check things are OK. 
+
+A better way, however, is to write *automated tests*, small pieces of
 code which verify each subroutine or class does what is expected. We write many such small tests, and keep running them
-whenever we make a change. That way, we can be sure that our new changes haven't broken old functionality.
+whenever we make a change. 
+
+That way, we can be sure that our new changes haven't broken old functionality.
 
 ##The Species Test File
 
@@ -38,9 +42,10 @@ and should see:
 
 > ```
 > Running tests...
-> Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
+> Test project /Users/jamespjh/devel/rsdt/
+>     rsd-cppcourse-example/reactor/build
 >     Start 1: SpeciesTest
-> 1/1 Test #1: SpeciesTest ...............   Passed    0.02 sec
+> 1/1 Test #1: SpeciesTest .......   Passed    0.02 sec
 > 
 > 100% tests passed, 0 tests failed out of 1
 > 
@@ -60,13 +65,14 @@ make
 ctest
 ```
 
-(Note that we needed to recompile with make, before rerunning the tests.)
+(Note that we needed to recompile with make.)
 
 > ```
 > Running tests...
-> Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
+> Test project /Users/jamespjh/devel/
+         rsdt/rsd-cppcourse-example/reactor/build
 >    Start 1: SpeciesTest
-> 1/1 Test #1: SpeciesTest ...............***Failed    0.01 sec
+> 1/1 Test #1: SpeciesTest ........***Failed    0.01 sec
 >
 > 0% tests passed, 1 tests failed out of 1
 > 
@@ -99,6 +105,7 @@ Note that in future, as we code, we will add new tests for our new functionality
 
 We'll need to tell CMake to build them, with an appropriate new line in `testing/CMakeLists.txt`, which currently has:
 
-``` cpp
-cxx_test(SpeciesTest SpeciesTest.cpp reactor_library) #specify a new test, and which files it depends on.
+``` CMake
+cxx_test(SpeciesTest SpeciesTest.cpp reactor_library) 
+#specify a new test, and which files it depends on.
 ```

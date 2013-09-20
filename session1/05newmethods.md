@@ -15,11 +15,11 @@ Think about which of the following types would be best to hold a concentration: 
 
 You'll want to add accessor methods: a getter method, like we had for the name, and, because we want the concentration to change, a setter method.
 
-So go ahead and do that work.
-
 You'll want to add one or more new tests to SpeciesTest.cpp which check your new functionality is working.
 
 Don't forget, as you make reasonable-sized changes to your code, to commit to version control.
+
+##Comparing with my answers
 
 Once you've finished, we can compare your work to my answers, and if you like, you can get hold of my own version and get rid of your own with a bit of git magic:
 
@@ -31,7 +31,7 @@ This will be the case after all the exercises, we'll let you know the git tag (a
 
 ##Rate of Change
 
-There's another piece of information we're going to want to add to Species: a knowledge of the rate of change, or flux of the species.
+There's another piece of information we're going to want to add to Species: a knowledge of the rate of change of the species.
 
 Obviously we'll want a getter method and a new member variable again.
 
@@ -42,6 +42,6 @@ We'll also want a reset method to zero the reaction rate, so we can start a new 
 
 And we'll want some more tests: for example, I have a test called `CanContributeToSpeciesRateOfChange`.
 
-Don't forget, as you make reasonable-sized changes to your code, to commit to version control.
+##Comparing with my answers
 
-My solution here is tag `1.2`
+My solution here is tag `v1.2`

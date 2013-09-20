@@ -27,6 +27,9 @@ void Species::SetConcentration(double new_concentration) {
 
 However, sometimes, for brevity, we choose to do the implementation and the declaration in one go.
 
+Why Inline?
+-----------
+
 One reason for this can be speed: jumps into functions in an implementation file are harder for the compiler to optimise.
 However, I would recommend against this: unless your code is really absolutely performance critical, you should design your
 code to be as easy to read as possible. Usually, separation of interface and implementation leads to more readable code: users
