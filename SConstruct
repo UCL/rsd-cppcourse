@@ -11,7 +11,7 @@ sessions={"session{session}".format(session=session):Glob("session{session}/*.md
 appendices=Glob("appendices/*.md")
 sessions["intro"]=intro
 sessions["appendices"]=appendices
-session_names=["intro", "session1"]
+session_names=["intro", "session1", "session2","appendices"]
 notes=env.PandocLatex('CPP.pdf',[sessions[name] for name in session_names])
 Depends(notes,'report.latex')
 

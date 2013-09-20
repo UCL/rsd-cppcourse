@@ -1,7 +1,5 @@
 # Installing Boost
 
-This document contains instructions for installation of the Boost library tool
-
 ## Linux Users ##
 
 Install the appropriate package with apt-get or yum, for example:
@@ -10,7 +8,7 @@ Install the appropriate package with apt-get or yum, for example:
 sudo apt-get install boost
 ```
 
-Check that your package manager is delivering at least version 1.53, if you have an earlier version, you will need to downlaod from source, following the windows instructions below.
+Check that your package manager is delivering at least version 1.53, if you have an earlier version, you will need to download from source, following the windows instructions below.
 
 ## Mac Users ##
 
@@ -41,7 +39,9 @@ unzip boost.zip
 
 (All one line, not literally two lines with dots!)
 
-Now, before we next build, we will need to tell our shell where the boost library can be found
+## CMake and Boost
+
+If we download from source, before we next build, we will need to tell our shell where the boost library can be found
 
 ```Bash
 cd build

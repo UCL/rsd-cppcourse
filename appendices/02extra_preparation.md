@@ -1,5 +1,7 @@
 # Post-carpentry installation Instructions
 
+## Introduction
+
 This document contains instructions for installation of the packages
 we'll be using during the RITS Autumn 2013 C++ course, for those who have already followed the setup instructions for the 2013
 the Autumn software carpentry course.

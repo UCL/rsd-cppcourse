@@ -1,7 +1,10 @@
-Session Goals
--------------
+Reactions effect Species
+=========================
 
-In this session, we're going to try to get to the point where we can have each Reaction have a number of Species, as reactants and products, and
+Objectives for the reaction class
+---------------------------------
+
+In this session, we're going to try to get to the point where we can have each Reaction have a number of Species as reactants and products, and
 have the reaction calculate it's reaction rate and contribute to the flux (rate of change) of each species.
 
 Vectors
@@ -13,8 +16,8 @@ In C++, a `vector` works like this:
 
 ``` cpp
 #include <vector> //Include the vector part of the standard library
-std::vector<double> an_array(5); // argument here is the size, type in angle brackets.
-
+std::vector<double> an_array(5); // argument here is the size, 
+							     // type in angle brackets.
 EXPECT_EQ(5,an_array.size()); // Use size() to get the size of an array.
 
 an_array[0]=2.5; // elements are indexed from zero ; here the last one is 4.
@@ -31,11 +34,21 @@ EXPECT_EQ(2,array3.size());
 EXPECT_EQ(2,array3[1]);
 ```
 
+Vectors as types
+----------------
+
 A vector is a proper type, and can be referenced like any other type.
 Note that a `vector<int>` is a different type from a `vector<Species>`,
-you can't set one from the other. We call a type like this which is based on
+you can't set one from the other. 
+
+We call a type like this which is based on
 another type a "template". We call a template type which is designed to store several other objects
-a "container". Other C++ standard library containers include `set`, `list`, and `map`.
+a "container". 
+
+Other C++ standard library containers include `set`, `list`, and `map`.
+
+Initialising vectors
+--------------------
 
 In order to initialise a vector with values, we have to add each value manually:
 

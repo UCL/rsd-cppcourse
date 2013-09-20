@@ -1,6 +1,10 @@
 \appendix 
 
-# Installation Instructions
+Installation Instructions
+=========================
+
+Introduction
+------------
 
 This document contains instructions for installation of the packages
 we'll be using during the RITS Autumn 2013 C++ course.
