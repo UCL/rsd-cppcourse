@@ -1,5 +1,5 @@
-Contributing to the species fluxes
-==================================
+Exercise: Contributing to the species fluxes
+--------------------------------------------
 
 A reaction needs to be able to add it's flux to the rate-of-change of species: positive for products and negative for reactants.
 

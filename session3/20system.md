@@ -1,5 +1,5 @@
-A reaction system
-=================
+Exercise: A reaction system
+---------------------------
 
 A reaction system is a system of several reactions.
 
@@ -17,7 +17,7 @@ so that species can be added to it's reactants and products.
 
 Client code should look something like:
 
-```C++
+``` cpp
 ReactionSystem myReactionSystem;
 
 Reaction * r1= myReactionSystem.NewReaction(9.0);
@@ -34,5 +34,3 @@ r1.AddProduct(w);
 You should of course add appropriate new tests to check this machinery is working.
 
 Our solution is v2.1
-
-Now it's time to finish off the science, and tell the system how to [add up the rates](21system2.md)

@@ -1,3 +1,5 @@
+\appendix 
+
 # Installation Instructions
 
 This document contains instructions for installation of the packages
@@ -32,7 +34,7 @@ So you should ensure you have eduroam installed and working.
 
 ## Linux Users ##
 
-### Git ###
+## Git ##
 
 If git is not already available on your machine 
 you can try to install it via your distribution package manager (e.g. `apt-get` or `yum`).
@@ -45,15 +47,15 @@ On RedHat based systems:
 
     yum install git
 
-### Subversion ###
+## Subversion ##
 
 Again, install the appropriate package with apt-get or yum (`subversion`)
 
-### CMake ###
+## CMake ##
 
 Again, install the appropriate package with apt-get or yum (`cmake`)
 
-### Editor and shell ###
+## Editor and shell ##
 
 Many different text editors suitable for programming are available.
 If you don't already have a favourite,
@@ -69,38 +71,45 @@ The default shell is usually bash but if not you can get to bash by opening a te
 
 ## Mac Users ##
 
-### XCode and command line tools ###
+## XCode and command line tools ##
 
 Install [XCode](https://itunes.apple.com/us/app/xcode/id497799835) using the Mac app store. 
 
 Then, go to Xcode...Preferences...Downloads... and install the command line tools option
 
-### Git ###
+## Git ##
 
 Install Homebrew via typing this at a terminal:
 
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-    
+``` Bash
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+```    
+
 and then type
 
-    brew install git
+``` Bash
+brew install git
+```
+
 
 Then install the [GitHub for Mac client](http://mac.github.com).
 
-### CMake
+## CMake
 
 Just do
 
-   brew install cmake
+``` Bash
+brew install cmake
+```
 
-### Editor and shell ###
+## Editor and shell ##
 
 The default text editor on OS X *textedit* should be sufficient for our use. Alternatively 
 http://mac.appstorm.net/roundups/office-roundups/top-10-mac-text-editors/ lists a number of other good editors. 
 
 To setup git to use *textedit* executing the following in a terminal should do.
 
-```
+``` Bash
 git config --global core.editor /Applications/TextEdit.app/Contents/MacOS/TextEdit
 ```
 
@@ -108,34 +117,33 @@ The default terminal on OSX should also be sufficient. If you want a more advanc
 
 ## Windows Users ##
 
-### Git ###
+## Git ##
 
 Install [msysgit](http://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git)
 
 Then install the [GitHub for Windows client](http://windows.github.com/).
 
-### Subversion
+## Subversion
 
 Install [subversion](http://sourceforge.net/projects/win32svn/)
 
 And choose to add it to the path for all users if so prompted.
 
-### CMake
+## CMake
 
 Install [cmake](http://www.cmake.org/cmake/resources/software.html)
 
 And choose to add it to the path for all users if so prompted.
 
-### Editor ###
+## Editor ##
 
-Unless you already use a specific editor which you are comfortable with we recommend using *Notepad++* on windows.
-
-http://notepad-plus-plus.org/
+Unless you already use a specific editor which you are comfortable with we recommend using 
+[*Notepad++*](http://notepad-plus-plus.org/) on windows.
 
 Using Notepad++ to edit text files including code should be straight forward but in addition you should configure git 
 to use notepad++ when writing commit messages (We will learn about these in the version controle session).   
 
-### Unix tools ###
+## Unix tools ##
 
 Install [MinGW](http://sourceforge.net/projects/mingw/) by following the download link.
 It should install MinGW's package manager. On the left, select ``Basic Setup``, and on right select
@@ -152,7 +160,7 @@ To do this, use NotePad++ to edit the file at `C:\MinGW\mysys\1.0\etc\profile`
 
 and toward the end, above the line `alias clear=clsb` add the following:
 
- ```
+ ``` Bash
 # Path settings from SoftwareCarpentry
 export PATH=$PATH:/c/Program\ Files\ \(x86\)/Git/bin
 export PATH=$PATH:/c/Program\ Files\ \(x86\)/Notepad++
@@ -164,13 +172,13 @@ Shell). This should open a *terminal* window, where commands can be typed in dir
 there may be no app for MinGW. In that case, open the ``run`` app and type in
 ``C:\MinGW\msys\1.0\msys.bat``. Once you have a terminal open, type
 
-```
+``` Bash
 which notepad++
 ```
 
 which should produce readout similar to `/c/Program Files (x86)/Notepad++/notepad++.exe`
 
-```
+``` Bash
 which git
 ```
 
@@ -179,8 +187,9 @@ to figure out where a given program is located on disk.
 
 Now we need to update the default editor used by Git.
 
-```
-git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst  -nosession -noPlugin"
+``` Bash
+git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' 
+	-multiInst  -nosession -noPlugin"
 ```
 
 Note that it is not obvious how to copy and paste text in a Windows terminal including Git Bash.

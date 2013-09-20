@@ -1,5 +1,5 @@
-Calculating the flux
-====================
+Exercise: Calculating the flux
+------------------------------
 
 So, the time has come to write a new method, with implementation and tests, which calculates the rate of a reaction, by multiplying the rate constant
 by the product of each reactant's concentration.
@@ -10,4 +10,3 @@ Don't forget to write a new test in ReactionTest.cpp
 
 Our solution is tagged as v1.7
 
-It's now time to learn about [pointers](pointers.md).

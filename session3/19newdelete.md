@@ -1,12 +1,11 @@
 New and Delete
-==============
+--------------
 
-The Heap and the Stack
-----------------------
+##The Heap and the Stack
 
 When I declare a variable inside a function or method like this:
 
-```C++
+``` cpp
 void somefunction()
 {
 	int x=5;
@@ -19,7 +18,7 @@ as soon as the function is deleted, the variable ceases to exist, and the memory
 Variables declared like this are variables "on the stack". They can be called from the function they are created in.
 If they are passed as references to functions called from that function, then it's fine, they'll still exist:
 
-```C++
+``` cpp
 void someotherfunction(int & input)
 {
 	std::cout << input << std::endl;
@@ -35,7 +34,7 @@ void somefunction()
 But they are cleaned up, and the associated memory freed, when the creating function exits. This means that if I try to return a
 reference, pointer, or iterator to a stack variable, the reference will become invalid, and crashes can occur:
 
-```C++
+``` cpp
 std::string * makemeastring(){
 	std::string result("Hello");
 	return &result;
@@ -47,12 +46,11 @@ std::cout << *makemeastring() << std::endl; \\ NO! This might crash!
 If I want to make something to which I can return a reference, a stack variable will not do. I need a way of creating variables which
 will hang around until I specifically tell them to be deleted. The place where such variables exist is called the "heap".
 
-New
----
+##New
 
 I can make a heap variable like this:
 
-```C++
+``` cpp
 std::string * makemeastring(){
 	std::string * heapstring=new std::string("Hello");
 	return *heapstring;
@@ -64,7 +62,7 @@ std::cout << *makemeastring() << std::endl; \\ Bad, memory leak!
 Which will work, but will cause a "memory leak". Each time I call this, space for the new string is created on the heap.
 But it is never cleaned up. So a program like:
 
-```C++
+``` cpp
 for (int i=0;i<1000000;i++){
 	makemeastring();
 }
@@ -72,12 +70,11 @@ for (int i=0;i<1000000;i++){
 
 will eventually crash due to lack of memory.
 
-Delete
-------
+##Delete
 
 So when we use `new`, we should use `delete` as well, so as to make sure we clean up after ourselves.
 
-``` C++
+``` cpp
 std::string * makemeastring(){
 	std::string * heapstring=new std::string("Hello");
 	return *heapstring;
@@ -90,8 +87,7 @@ delete mystring;
 
 We pass a pointer to `delete`, specifying the heap variable to be cleaned up.
 
-Destructors
------------
+##Destructors
 
 Functions, like the example above, which create an object on the heap and return it, are sometimes called "factory methods". The danger here is that you might forget to `delete`
 the returned pointer.
@@ -102,7 +98,7 @@ either through an explicit delete call or at the end of a scope when an object i
 
 A destructor method is often used to free memory allocated during a constructor. The name of the destructor is the same as the name of the destructor, preceded by a tilde `~`:
 
-``` C++
+``` cpp
 class Myclass {
 	double * heapdouble;
 
@@ -119,5 +115,3 @@ class Myclass {
 ```
 
 The heap variable memory is managed inside the class: a pointer to it is given out, but client classes never have to worry about deleting it. Indeed, the program will crash if they do: if you try to delete a variable twice, the program will crash. (This is where C++11 shared_ptrs start to look seriously cool.)
-
-Let's move on to the next [exercise](20system.md)

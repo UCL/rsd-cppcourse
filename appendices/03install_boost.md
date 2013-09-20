@@ -1,4 +1,4 @@
-# Post-carpentry installation Instructions
+# Installing Boost
 
 This document contains instructions for installation of the Boost library tool
 
@@ -33,10 +33,13 @@ cd ~/devel/libraries/boost
 
 Now, download and unzip boost, which will take quite a while:
 
-```
-curl -L http://sourceforge.net/projects/boost/files/boost/1.54.0/boost_1_54_0.zip/download > boost.zip
+``` Bash
+curl -L http://sourceforge.net/projects/boost/files/...
+		...boost/1.54.0/boost_1_54_0.zip/download > boost.zip
 unzip boost.zip
 ```
+
+(All one line, not literally two lines with dots!)
 
 Now, before we next build, we will need to tell our shell where the boost library can be found
 

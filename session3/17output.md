@@ -1,15 +1,15 @@
-Output of custom types
-======================
+Streams
+-------
 
 We've seen that we can output data to the terminal with code like:
 
-```C++
+``` cpp
 std::cout << "A species was created called '" << calcium.GetName() << "'" << std::endl;
 ```
 
 Now, `std::cout` is a stream. A stream is anything which can absorb output like this. It might be a file:
 
-```C++
+``` cpp
 #include <fstream>
 std::fstream my_file("filename",std::ios_base::out);
 my_file << "Write to the file" << std::endl;
@@ -23,7 +23,7 @@ EXPECT_EQ("Write",first_word);
 
 Or a stringstream, which is a string we can write to like a stream:
 
-```C++
+``` cpp
 std::ostringstream output_buffer;
 int x=3;
 output_buffer << "Write " << x << " to the buffer" << std::endl;
@@ -31,7 +31,7 @@ EXPECT_EQ("Write 3 to the buffer\n",output_buffer.str());
 ```
 
 We can write a method which accepts *any* kind of output stream, and writes to whatever kind of stream it is:
-``` C++
+``` cpp
 void output(std::ostream &output){
 	output << "Some content" << std::flush;
 }
@@ -49,7 +49,7 @@ Operator Overloading
 
 We've also encountered operator overloading again: the `<<` operator is normally used to mean a bitwise-multiply-by-two:
 
-```C++
+``` cpp
 x=5;
 EXPECT_EQ(40,x<<3);
 ```
@@ -60,11 +60,9 @@ It's easy to define an operator overloading for your type: simply declare a func
 
 The signature one for `operator<<` is:
 
-```C++
+``` cpp
 left_hand_type & operator<<(left_hand_type &, const right_hand_type&);
 ```
 
 the compiler will work out the left and right hand types in use, and call the operator as appropriate.
-
-Armed with this knowledge, we'll try in the next [exercise](18outputReaction.md) to write a custom outputter for our Reaction type.
 

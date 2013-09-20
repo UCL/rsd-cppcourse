@@ -6,7 +6,7 @@ the Autumn software carpentry course.
 
 ## Linux Users ##
 
-### Subversion ###
+## Subversion ##
 
 Again, install the appropriate package with apt-get or yum, for example:
 
@@ -14,7 +14,7 @@ Again, install the appropriate package with apt-get or yum, for example:
 sudo apt-get install subversion
 ```
 
-### CMake ###
+## CMake ##
 
 Again, install the appropriate package with apt-get or yum (`cmake`)
 
@@ -22,7 +22,7 @@ Again, install the appropriate package with apt-get or yum (`cmake`)
 
 Subversion is pre-installed on OSX
 
-### CMake
+## CMake
 
 Just do
 
@@ -32,13 +32,13 @@ brew install cmake
 
 ## Windows Users ##
 
-### Subversion
+## Subversion
 
 Install [subversion](http://sourceforge.net/projects/win32svn/)
 
 And choose to add it to the path for all users if so prompted.
 
-### CMake
+## CMake
 
 Install [cmake](http://www.cmake.org/cmake/resources/software.html)
 

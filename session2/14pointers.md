@@ -1,9 +1,11 @@
 Pointers
-========
+--------
+
+## Why we need pointers
 
 We have a problem. Our `vector<Species>` in the reaction class is actually taking a *COPY* of each species we define:
 
-```C++
+``` cpp
 	emptyReaction.AddReactant(calcium);
 	EXPECT_EQ(emptyReaction.GetReactants()[0].GetName(),"Ca");
 
@@ -30,10 +32,12 @@ With a reference, we know the reference always refers to something, but with a p
 points to something invalid, our program will crash at runtime. It is easy this way to write programs that crash, and this isn't detected by the compiler. (In C++11,
 we can avoid these nasty problems by using `std::shared_ptr` and `std::weak_ptr`.)
 
+## Pointer syntax
+
 Just as with iterators, we use an asterix operator to obtain the thing pointed to. To obtain a pointer to something we already have, we use an ampersand, a confusing overuse
 of one symbol!
 
-```C++
+``` cpp
 	double x=5;
 
 	double *my_ptr; // This pointer points nowhere : not safe to use yet.
@@ -58,14 +62,16 @@ of one symbol!
 
 	double *new_ptr=&x;
 
-	//EXPECT_EQ(new_ptr,my_ptr); // Two pointers compare equal if they point to the same thing. These two don't so this test would fail.
+	//EXPECT_EQ(new_ptr,my_ptr); // Two pointers compare equal if they 
+								 // point to the same thing. 
+								 // These two don't so this test would fail.
 	new_ptr=&y;
 	EXPECT_EQ(new_ptr,my_ptr); // OK
 ```
 
 Compare the same with references:
 
-```C++
+``` cpp
 	double x=5;
 
 	double &x_ref=x; // You *have* to define what a reference refers to when it is made
@@ -78,7 +84,8 @@ Compare the same with references:
 
 	double y=7;
 
-	x_ref=y; // The reference is *still* referring to x. We can't move the reference to refer to something else!
+	x_ref=y; // The reference is *still* referring to x. We can't move the 
+			 // reference to refer to something else!
 	EXPECT_EQ(7,x_ref);
 	EXPECT_EQ(7,x); // By modifying the reference, we changed x.
 
@@ -89,17 +96,21 @@ Compare the same with references:
 
 ```
 
+##There's more than one way to do it.
+
 So, we've now seen three ways of referring indirectly to something, references, pointers, and iterators. C++ frustratingly contains many different ways to do the same thing. This is sometimes called TMTWWTDI, pronounced "tim-toady".
 
-Finally, if we have a reference to, or an iterator to, an object with methdos we can call, we might think we would have to write:
+##Calling methods of pointers
 
-```C++
+If we have a reference to, or an iterator to, an object with methdos we can call, we might think we would have to write:
+
+``` cpp
 (*my_ptr).CallMethod();
 ```
 
 But there is a syntactic sugar for this:
 
-```C++
+``` cpp
 my_ptr->CallMethod();
 ```
 
@@ -107,14 +118,15 @@ This "arrow operator" means dereference-then-call.
 
 Unfortunately, if we have a double pointer, or a pointer to an iterator, or an iterator to a pointer, we still need the annoying brackets:
 
-```C++
+``` cpp
 Species **double_pointer;
 Species *pointer;
 Species calcium;
 pointer=&calcium;
 double_pointer=&pointer;
 pointer->SetConcentration(11.0);
-EXPECT_EQ(2.0, (*double_pointer)->GetConcentration()); // Sadly, not double_pointer->->GetConcentration();
+EXPECT_EQ(2.0, (*double_pointer)->GetConcentration()); 
+		// Sadly, not double_pointer->->GetConcentration();
 ```
 
-So, it's time for our next [exercise](rewrite.md).
+

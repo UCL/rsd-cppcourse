@@ -1,14 +1,17 @@
-Vectors
-=======
+Session Goals
+-------------
 
 In this session, we're going to try to get to the point where we can have each Reaction have a number of Species, as reactants and products, and
 have the reaction calculate it's reaction rate and contribute to the flux (rate of change) of each species.
+
+Vectors
+-------
 
 To do this, we need some way for the reaction to keep a list of all the reactants and products it has. So we'll need some kind of array.
 
 In C++, a `vector` works like this:
 
-```C++
+``` cpp
 #include <vector> //Include the vector part of the standard library
 std::vector<double> an_array(5); // argument here is the size, type in angle brackets.
 
@@ -17,7 +20,8 @@ EXPECT_EQ(5,an_array.size()); // Use size() to get the size of an array.
 an_array[0]=2.5; // elements are indexed from zero ; here the last one is 4.
 EXPECT_EQ(an_array[0],2.5);
 
-std::vector<std::string> another_array(3,"hello"); // Second argument is the initial value
+std::vector<std::string> another_array(3,"hello"); // Second argument is 
+												   // the initial value
 EXPECT_EQ("hello",another_array[2]);
 
 std::vector<int> array3; // No arguments, initially empty
@@ -35,7 +39,7 @@ a "container". Other C++ standard library containers include `set`, `list`, and 
 
 In order to initialise a vector with values, we have to add each value manually:
 
-```C++
+``` cpp
 std::vector<int> array;
 array.push_back(1);
 array.push_back(2);
@@ -44,8 +48,7 @@ array.push_back(3);
 
 However, if you have C++11, the latest version of C++, which in this course we're not assuming you do, you can write:
 
-```C++
+``` cpp
 std::vector<int> x {1,2,3};
 ```
 
-We're ready for our [next exercise](10reactants.md).

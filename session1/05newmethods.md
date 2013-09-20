@@ -1,10 +1,11 @@
-Adding new methods to Species
-=============================
+Exercise: Adding new methods to Species
+=======================================
 
-Concentration
--------------
+##Introduction
 
 So, we're trying to build up a program which can simulate mass-action chemical kinetics.
+
+##Concentration
 
 We're going to want our Species class to be able to have a concentration.
 
@@ -28,8 +29,7 @@ git checkout v1.1 .
 
 This will be the case after all the exercises, we'll let you know the git tag (above `1.1`) which solves each exercise.
 
-Rate of Change
---------------
+##Rate of Change
 
 There's another piece of information we're going to want to add to Species: a knowledge of the rate of change, or flux of the species.
 
@@ -45,8 +45,3 @@ And we'll want some more tests: for example, I have a test called `CanContribute
 Don't forget, as you make reasonable-sized changes to your code, to commit to version control.
 
 My solution here is tag `1.2`
-
-Have a look at a [new coding concept](06inlinedefinitions.md) introduced in our solutions.
-
-
-

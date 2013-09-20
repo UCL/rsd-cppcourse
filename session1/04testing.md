@@ -1,5 +1,7 @@
-The reaction system test file
-=============================
+Testing
+=======
+
+##Introduction
 
 When we program, we want to know that our code works as expected.
 
@@ -8,17 +10,23 @@ inspecting the output to check things are OK. A better way, however, is to write
 code which verify each subroutine or class does what is expected. We write many such small tests, and keep running them
 whenever we make a change. That way, we can be sure that our new changes haven't broken old functionality.
 
+##The Species Test File
+
 Look at the file test/SpeciesTest.cpp:
 
-``` c++
+``` cpp
 // Test that the system has a name as expected.
-TEST(SpeciesTest, SpeciesHasAName) { // First argument is test group, second is test name
+TEST(SpeciesTest, SpeciesHasAName) { // First argument is test group
+									 // second is test name
   Species mySpecies("SomeName"); // Create a species with a specified name
-  EXPECT_EQ("SomeName", mySpecies.GetName()); // Assert that the name should be as expected
+  EXPECT_EQ("SomeName", mySpecies.GetName()); // Assert that the name 
+  											  // should be as expected
 }
 ```
 
 Here we define an *expectation*: something which should be true, in this case, that the system name should be as defined.
+
+##Running the Tests
 
 You can run this test with
 
@@ -39,6 +47,8 @@ and should see:
 > Total Test time (real) =   0.02 sec
 > ```
 
+##Analysing failing tests
+
 try modifying the test so it should fail:
 ``` Diff
 - Species mySpecies("SomeName");
@@ -51,6 +61,7 @@ ctest
 ```
 
 (Note that we needed to recompile with make, before rerunning the tests.)
+
 > ```
 > Running tests...
 > Test project /Users/jamespjh/devel/rsdt/rsd-cppcourse-example/reactor/build
@@ -82,12 +93,12 @@ Note the difference between the *expected* and *actual* values.
 
 Put your code back right again. (`git checkout SpeciesTest.cpp`)
 
+##Adding new tests
+
 Note that in future, as we code, we will add new tests for our new functionality.
 
-We'll need to tell CMake to build them, with an appropriate line in `testing/CMakeLists.txt`, which currently has:
+We'll need to tell CMake to build them, with an appropriate new line in `testing/CMakeLists.txt`, which currently has:
 
-``` C++
+``` cpp
 cxx_test(SpeciesTest SpeciesTest.cpp reactor_library) #specify a new test, and which files it depends on.
 ```
-
-Go to the [first exercise](exercises.md) for this session.

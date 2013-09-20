@@ -1,6 +1,5 @@
-
-Adding science to the reaction system
-=====================================
+Exercise: Adding science to the reaction system
+-----------------------------------------------
 
 We're going to add all the rest of the methods we need to use the reaction system as a set of ordinary differential equations.
 
@@ -16,5 +15,3 @@ Add another method which when called with a container of concentrations, sets th
 Each of these methods should have good tests.
 
 Our solution is v2.2
-
-Now we need to actually solve the system of ODEs. We'll use an [external library](22boost.md) to do this.

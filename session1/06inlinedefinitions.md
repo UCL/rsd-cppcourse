@@ -1,21 +1,25 @@
 Inline Definitions
 ==================
 
+##Introduction
+
 In our interface declaration for the new Species methods, we've put the implmentation of the methods right in with the definition:
 
-``` C++
-void SetConcentration(double new_concentration) {concentration=new_concentration;} // Set concentration
+``` cpp
+void SetConcentration(double new_concentration) {
+	concentration=new_concentration;
+} // Set concentration
 ```
 
 Normally, we would put the declaration in the header file:
 
-``` C++
+``` cpp
 void SetConcentration(double new_concentration);
 ```
 
 and the implementation in the .cpp file:
 
-``` C++
+``` cpp
 void Species::SetConcentration(double new_concentration) {
 	concentration=new_concentration;
 }
@@ -30,5 +34,3 @@ of your classes don't need to know how they work inside.
 
 However, for really simple brief functions, such as getters and setters, it can be more convenient just to implement them in the header file.
 This is a judgement call, a matter of your personal programming aesthetics.
-
-Go to the [second and final exercise](06newclass.md) for this session.
