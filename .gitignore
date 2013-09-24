@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+CPP.pdf
+CPP.html
+CPP.tex
+.sconsign.dblite
