@@ -81,7 +81,7 @@ int seven = 7; // Create an integer variable called seven, put 7 in it.
 
 ```
 
-to declare an integer variables.
+to declare integer variables.
 
 ##Semicolons
 
