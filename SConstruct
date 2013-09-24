@@ -21,4 +21,4 @@ pandoc_slides=Builder(action='pandoc -t revealjs -s -V theme=beige'+
 	' -V revealjs-url=http://lab.hakim.se/reveal-js/'+
 	' $SOURCES -o $TARGET')
 env.Append(BUILDERS={'PandocSlides':pandoc_slides})
-slides=env.PandocSlides("CPP.html",[sessions[name] for name in session_names])
+slides=env.PandocSlides("reveal/index.html",[sessions[name] for name in session_names])
