@@ -49,7 +49,7 @@ On ubuntu or other Debian systems:
 
 On RedHat based systems:
 
-    yum install git
+    sudo yum install git
 
 ## Subversion ##
 
