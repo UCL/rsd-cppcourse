@@ -11,7 +11,7 @@ we'll be using during the RITS Autumn 2013 C++ course.
 
 If you have already followed the Software Carpentry instructions, you will have done most of this already. 
 
-Just follow the [additional instructions](../02extra_preparation.md) for installing Subversion and CMake.
+Just follow the [additional instructions](02extra_preparation.md) for installing Subversion and CMake.
 
 Linux users should be able to use their package manager to install all software requirements, and should have C++ and a decent editor already.
 (if you're using Linux, we assume you won't have any trouble with these requirements).
