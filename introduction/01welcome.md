@@ -35,6 +35,7 @@ In order to follow this course, you should at minimum already know:
 * How to edit program files in a text editor
 * How to create and delete files and folders (directories) using a unix command line.
 
+<!---
 The Syntax Appendix
 -------------------
 
@@ -42,7 +43,7 @@ In the [syntax appendix](../appendices/syntax.md) we give simple look-up transla
 in terms of the language you already know. You should use this as we go along, in order to answer questions such as
 
 > I know that in Python, I make an array with [1,2,3], but how do I write that in C++?
-
+-->
 Useful Background Knowledge
 ----------------------
 

@@ -3,7 +3,7 @@ Inline Definitions
 
 ##Introduction
 
-In our interface declaration for the new Species methods, we've put the implmentation of the methods right in with the definition:
+In our [interface declaration](https://github.com/UCL/rsd-cppcourse-example/blob/v1.2/reactor/src/Species.h) for the new Species methods, we've put the implmentation of the methods right in with the definition:
 
 ``` cpp
 void SetConcentration(double new_concentration) {

@@ -16,10 +16,14 @@ to compile these files.
 
 ## Comparing with my answers
 
-The git tag for our solution to this exercise is `v1.3`
+The git tag for our solution to this exercise is [`v1.3`](https://github.com/UCL/rsd-cppcourse-example/tree/v1.3)
+
+Have a look at my [changes](https://github.com/UCL/rsd-cppcourse-example/compare/v1.2...v1.3)
 
 ## Adding a Reaction Rate to the class
 
 The class is going to need the ability to store a reaction rate, with a getter access method and ability to set the rate in the constructor. Add this with new tests.
 
-The git tag for our solution to this exercise is `v1.4`.
+The git tag for our solution to this exercise is [`v1.4`](https://github.com/UCL/rsd-cppcourse-example/tree/v1.3).
+
+Have a look at my [changes](https://github.com/UCL/rsd-cppcourse-example/compare/v1.3...f1494eb)

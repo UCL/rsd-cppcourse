@@ -85,14 +85,14 @@ ls
 
 ##The CMakeLists.txt build tool files
 
-In the scaffold code, have a brief look at the top-level CMakeLists.txt file, which tells CMake how to build our program.
+In the scaffold code, have a brief look at the top-level [`CMakeLists.txt`](https://github.com/UCL/rsd-cppcourse-example/blob/master/reactor/CMakeLists.txt) file, which tells CMake how to build our program.
 
 There's a lot of tedious stuff here, defining our executable, linking to lower level CMakeLists.txt files which
 define our tests and libraries, and downloading the Google C++ Testing framework from the internet.
 
 ##Defining a library with CMake
 
-If we look at the lower level `reactor/CMakeLists.txt` file we can see this line:
+If we look at the lower level [`src/CMakeLists.txt`](https://github.com/UCL/rsd-cppcourse-example/blob/master/reactor/src/CMakeLists.txt) file we can see this line:
 
 ``` CMake
 add_library(reactor_library Species.cpp)
