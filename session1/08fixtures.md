@@ -11,7 +11,7 @@ In the GoogleTest C++ testing framework, we can declare fixtures as classes, and
 
 ##Testing Reaction with Fixtures
 
-Using a fixture, our ReactionTest code looks like:
+Using a fixture, our [ReactionTest](https://github.com/UCL/rsd-cppcourse-example/blob/v1.4/reactor/test/ReactionTest.cpp) code looks like:
 
 
 ``` cpp

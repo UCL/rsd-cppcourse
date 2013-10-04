@@ -16,7 +16,7 @@ That way, we can be sure that our new changes haven't broken old functionality.
 
 ##The Species Test File
 
-Look at the file test/SpeciesTest.cpp:
+Look at the file [test/SpeciesTest.cpp](https://github.com/UCL/rsd-cppcourse-example/blob/master/reactor/test/SpeciesTest.cpp):
 
 ``` cpp
 // Test that the system has a name as expected.

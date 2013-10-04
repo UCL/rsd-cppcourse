@@ -9,7 +9,7 @@ and the internals of how the class works, which we call the *implementation*.
 
 ##Header files
 
-Have a look in your editor at src/Species.h
+Have a look in your editor at [src/Species.h](https://github.com/UCL/rsd-cppcourse-example/blob/master/reactor/src/Species.h)
 
 First of all, this file has a file extension ".h".
 
@@ -134,7 +134,8 @@ Everything declared inside the namespace declaration becomes part of the namespa
 Importing namespaces
 --------------------
 
-Finally, as in our test files, you can simply import everything from a namespace into another one, including the default global namespace:
+Finally, as in our [test files](https://github.com/UCL/rsd-cppcourse-example/blob/master/reactor/test/SpeciesTest.cpp), 
+you can simply import everything from a namespace into another one, including the default global namespace:
 
 ``` cpp
 	using namespace reactor;
@@ -152,7 +153,7 @@ I recommend against that practice: in general it's better to spend a few extra c
 
 ##Accessors
 
-We can now look at the implementation of these methods in `species.cpp`:
+We can now look at the implementation of these methods in [`species.cpp`](https://github.com/UCL/rsd-cppcourse-example/blob/master/reactor/src/Species.cpp):
 
 ``` cpp
 std::string reactor::Species::GetName() 

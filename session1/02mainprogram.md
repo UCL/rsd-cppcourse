@@ -3,7 +3,7 @@ The main program
 
 ##Introduction
 
-Have a look at the reactor.cpp file in your editor. You will see comments which explain some of what this file does.
+Have a look at the [reactor.cpp](https://github.com/UCL/rsd-cppcourse-example/blob/master/reactor/reactor.cpp) file in your editor. You will see comments which explain some of what this file does.
 
 ##Including libraries or other source files.
 

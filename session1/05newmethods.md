@@ -27,7 +27,9 @@ Once you've finished, we can compare your work to my answers, and if you like, y
 git checkout v1.1 .
 ```
 
-This will be the case after all the exercises, we'll let you know the git tag (above `1.1`) which solves each exercise.
+This will be the case after all the exercises, we'll let you know the git tag (above [`1.1`](https://github.com/UCL/rsd-cppcourse-example/tree/v1.1)) which solves each exercise.
+
+Here is the comparison of what changed: [from v1.0 to v1.1](https://github.com/UCL/rsd-cppcourse-example/compare/v1.0...v1.1)
 
 ##Rate of Change
 
@@ -44,4 +46,6 @@ And we'll want some more tests: for example, I have a test called `CanContribute
 
 ##Comparing with my answers
 
-My solution here is tag `v1.2`
+My solution here is tag [`v1.2`](https://github.com/UCL/rsd-cppcourse-example/tree/v1.2)
+
+Have a look at the [changes](https://github.com/UCL/rsd-cppcourse-example/compare/v1.1...v1.2)
