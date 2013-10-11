@@ -44,4 +44,8 @@ A const reference, like `const double &`, is a type that means "this is a refere
 Exercise: returning vectors as references
 -----------------------------------------
 
-As an exercise, you should now modify your code to ensure that if you return vectors, you do so with a const reference. Our solution is tagged with `v1.6`
+As an exercise, you should now modify your code to ensure that if you return vectors, you do so with a const reference.
+
+Our solution for this exercise is tagged as [`v1.6`](https://github.com/UCL/rsd-cppcourse-example/tree/v1.6)
+
+Have a look at my [changes](https://github.com/UCL/rsd-cppcourse-example/compare/v1.5...v1.6)
