@@ -8,6 +8,14 @@ Install the appropriate package with apt-get or yum, for example:
 sudo apt-get install boost
 ```
 
+On Ubuntu 13.04 boost is spilt into multiple packages. The package needed here is "libboost1.53-dev" and 
+to install it you should do:
+
+``` Bash
+sudo apt-get install libboost1.53-dev
+```
+
+
 Check that your package manager is delivering at least version 1.53, if you have an earlier version, you will need to download from source, following the windows instructions below.
 
 ## Mac Users ##
