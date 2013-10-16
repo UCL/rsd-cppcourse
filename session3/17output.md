@@ -1,5 +1,8 @@
 Streams
--------
+=======
+
+Stream-based print statements
+-----------------------------
 
 We've seen that we can output data to the terminal with code like:
 
@@ -7,7 +10,15 @@ We've seen that we can output data to the terminal with code like:
 std::cout << "A species was created called '" << calcium.GetName() << "'" << std::endl;
 ```
 
-Now, `std::cout` is a stream. A stream is anything which can absorb output like this. It might be a file:
+Where `<<` acts as our output operator.
+
+Now, `std::cout` is a stream, for standard output. 
+
+So is `std::cerr` for standard error.
+
+File Streams
+-------
+A stream is anything which can absorb output like this. It might be a file:
 
 ``` cpp
 #include <fstream>
@@ -21,7 +32,10 @@ input_file >> first_word;
 EXPECT_EQ("Write",first_word);
 ```
 
-Or a stringstream, which is a string we can write to like a stream:
+String Streams
+--------------
+
+A stream can be stringstream, which is a string we can write to like a stream:
 
 ``` cpp
 std::ostringstream output_buffer;
@@ -29,6 +43,9 @@ int x=3;
 output_buffer << "Write " << x << " to the buffer" << std::endl;
 EXPECT_EQ("Write 3 to the buffer\n",output_buffer.str());
 ```
+
+Methods which take any kind of stream
+-------------------------------------
 
 We can write a method which accepts *any* kind of output stream, and writes to whatever kind of stream it is:
 ``` cpp
@@ -47,21 +64,30 @@ This is our first enounter with the advanced idea of "inheritance". The idea is 
 Operator Overloading
 --------------------
 
-We've also encountered operator overloading again: the `<<` operator is normally used to mean a bitwise-multiply-by-two:
+Now the `<<` operator is normally used to mean a bitwise-multiply-by-two:
 
 ``` cpp
 x=5;
 EXPECT_EQ(40,x<<3);
 ```
 
-but when used with streams, `<<` means output, and `>>` means input.
+But when used with streams, `<<` means output, and `>>` means input.
+
+Defining a new operator
+-----------------------
 
 It's easy to define an operator overloading for your type: simply declare a function with a name like `operator+` or `operator--`, which conforms to the appropriate set of arguments and outputs. (Called a "function signature").
 
-The signature one for `operator<<` is:
+The signature for `operator<<` is:
 
 ``` cpp
 left_hand_type & operator<<(left_hand_type &, const right_hand_type&);
+```
+
+For example:
+
+``` cpp
+std::ostream & operator<<(std::ostream &, const reactor::Species&);
 ```
 
 the compiler will work out the left and right hand types in use, and call the operator as appropriate.

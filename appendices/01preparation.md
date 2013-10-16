@@ -6,12 +6,15 @@ Installation Instructions
 Introduction
 ------------
 
-This document contains instructions for installation of the packages
+There following appendix gives instructions for installation of the packages
 we'll be using during the RITS Autumn 2013 C++ course.
 
 If you have already followed the Software Carpentry instructions, you will have done most of this already. 
 
-Just follow the [additional instructions](02extra_preparation.md) for installing Subversion and CMake.
+Just follow the [additional instructions][Post carpentry installation] for installing Subversion and CMake.
+
+Operating Systems
+-----------------
 
 Linux users should be able to use their package manager to install all software requirements, and should have C++ and a decent editor already.
 (if you're using Linux, we assume you won't have any trouble with these requirements).
@@ -21,6 +24,9 @@ A recent Linux distribution is recommended.
 
 Mac and Windows users should follow the instructions below.
 
+Working through the install
+---------------------------
+
 Give yourself 30 minutes or so to run through this installation process and don't get intimidated!
 Please try to install everything well before the bootcamp,
 as it is important that we don't waste time during the workshop trying to mend installations. 
@@ -28,17 +34,25 @@ as it is important that we don't waste time during the workshop trying to mend i
 If you do get stuck, first try searching on the internet (e.g. [stackoverflow.com](http://stackoverflow.com)) for solutions.
 Or, try asking a fellow bootcamp attendee for help.
 
+Drop-in session
+---------------
+
 We will be running a drop-in session on the afternoon of Monday 23rd September from 13:00 - 17:00 in Room G07,
 Chadwick Building (main campus on Gower Street) for people that would like some help with setting up their laptop in 
 advance of the boot camp. All students should either attend this or ensure 
 that they have a working git, python, and editor and shell installation by following the instructions bellow before the workshop. 
 
+Eduroam
+-------
+
 We will be using UCL's [eduroam](http://www.ucl.ac.uk/isd/staff/wireless/eduroam) service to connect to the internet for this work. 
 So you should ensure you have eduroam installed and working.
 
-## Linux Users ##
+Linux Install
+=============
 
-## Git ##
+Git
+---
 
 If git is not already available on your machine 
 you can try to install it via your distribution package manager (e.g. `apt-get` or `yum`).
@@ -73,7 +87,8 @@ git config --global core.editor NameofYourEditorHere
 
 The default shell is usually bash but if not you can get to bash by opening a terminal and typing `bash`.
 
-## Mac Users ##
+Mac Install
+===========
 
 ## XCode and command line tools ##
 
@@ -96,7 +111,7 @@ brew install git
 ```
 
 
-Then install the [GitHub for Mac client](http://mac.github.com).
+Then install the [GitHub for Mac client](http://mac.github.com). (If you have problems with older versions of OSX, it's safe to skip this.)
 
 ## CMake
 
@@ -109,17 +124,19 @@ brew install cmake
 ## Editor and shell ##
 
 The default text editor on OS X *textedit* should be sufficient for our use. Alternatively 
-http://mac.appstorm.net/roundups/office-roundups/top-10-mac-text-editors/ lists a number of other good editors. 
+choose from a [list](http://mac.appstorm.net/roundups/office-roundups/top-10-mac-text-editors/) of other good editors. 
 
 To setup git to use *textedit* executing the following in a terminal should do.
 
 ``` Bash
-git config --global core.editor /Applications/TextEdit.app/Contents/MacOS/TextEdit
+git config --global core.editor 
+	/Applications/TextEdit.app/Contents/MacOS/TextEdit
 ```
 
 The default terminal on OSX should also be sufficient. If you want a more advanced terminal [iTerm2](http://www.iterm2.com/) is an alternative.
 
-## Windows Users ##
+Windows Install
+===============
 
 ## Git ##
 
@@ -150,13 +167,18 @@ to use notepad++ when writing commit messages (We will learn about these in the 
 ## Unix tools ##
 
 Install [MinGW](http://sourceforge.net/projects/mingw/) by following the download link.
-It should install MinGW's package manager. On the left, select ``Basic Setup``, and on right select
-``mingw32-base, mingw-developer-toolkit, mingw-gcc-g++, msys-base``. On some systems these package
+It should install MinGW's package manager. On the left, select ``Basic Setup``, and on the right select
+``mingw32-base``, ``mingw-developer-toolkit,``
+``mingw-gcc-g++`` and ``msys-base``. On some systems these package
 might be selected from start. Finally, click the installation menu and ``Apply Changes``. 
+
+## Locating your install
 
 Now, we need to find out where Git and Notepad++ have been installed, this will be either in 
 `C:/Program Files (x86)` or in `C:\ProgramFiles`. The former is the norm on more modern versions of windows.
 If you have the older version, replace `Program\ Files\ \(x86\)` with `Program\ Files` in the instructions below.
+
+## Telling Shell where to find the tools
 
 We need to tell the new shell installed in this way where git and Notepad++ are.
 
@@ -164,36 +186,61 @@ To do this, use NotePad++ to edit the file at `C:\MinGW\mysys\1.0\etc\profile`
 
 and toward the end, above the line `alias clear=clsb` add the following:
 
- ``` Bash
+``` Bash
 # Path settings from SoftwareCarpentry
 export PATH=$PATH:/c/Program\ Files\ \(x86\)/Git/bin
 export PATH=$PATH:/c/Program\ Files\ \(x86\)/Notepad++
 # End of Software carpentry settings
 ```
 
+
+## Finding your terminal
+
 Check this works by opening MinGW shell, with the start menu (Start->All programs->MinGW->MinGW
-Shell). This should open a *terminal* window, where commands can be typed in directly. On windows 8,
+Shell). This should open a *terminal* window, where commands can be typed in directly. 
+
+On windows 8,
 there may be no app for MinGW. In that case, open the ``run`` app and type in
-``C:\MinGW\msys\1.0\msys.bat``. Once you have a terminal open, type
+
+``` Bash
+C:\MinGW\msys\1.0\msys.bat
+```
+
+## Checking which tools you have
+
+Once you have a terminal open, type
 
 ``` Bash
 which notepad++
 ```
 
-which should produce readout similar to `/c/Program Files (x86)/Notepad++/notepad++.exe`
+which should produce readout similar to 
+
+```
+/c/Program Files (x86)/Notepad++/notepad++.exe`
+```
+
+Also try:
 
 ``` Bash
 which git
 ```
 
-which should produce `/c/Program Files (x86)/Notepad++/notepad++.exe`. The ``which`` command is used
-to figure out where a given program is located on disk.
+which should produce 
+
+```
+/c/Program Files (x86)/Notepad++/notepad++.exe
+``` 
+
+The ``which`` command is used to figure out where a given program is located on disk.
+
+## Tell Git about your editor
 
 Now we need to update the default editor used by Git.
 
 ``` Bash
-git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' 
-	-multiInst  -nosession -noPlugin"
+git config --global core.editor "'C:/Program Files (x86)/Notepad++
+	/notepad++.exe' -multiInst  -nosession -noPlugin"
 ```
 
 Note that it is not obvious how to copy and paste text in a Windows terminal including Git Bash.
@@ -201,6 +248,3 @@ Copy and paste can be found by right clicking on the top bar of the window and s
 commands from the drop down menu (in a sub menu).  
 
 You should now have a working version of git and notepad++, accessible from your shell.
-
-If you have problems following these instructions, please come to our drop-in session on Monday 23rd September, 1-5, 
-G07 Chadwick building.

@@ -12,13 +12,14 @@ for session in range(1,4):
 appendices=Glob("appendices/*.md")
 sessions["intro"]=intro
 sessions["appendices"]=appendices
-session_names=["intro", "session1", "session2","appendices"]
+session_names=["intro", "session1", "session2","session3","appendices"]
 notes=env.PandocLatex('CPP.pdf',[sessions[name] for name in session_names])
 Depends(notes,'report.latex')
 
 pandoc_slides=Builder(action='pandoc -t revealjs -s -V theme=beige'+
 	' --css=beige.css'+
 	' --css=slidetheme.css'+
+	' --mathjax '+
 	' -V revealjs-url=http://lab.hakim.se/reveal-js/'+
 	' $SOURCES -o $TARGET')
 env.Append(BUILDERS={'PandocSlides':pandoc_slides})

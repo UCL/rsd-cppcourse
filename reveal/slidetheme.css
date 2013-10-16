@@ -1,1 +1,4 @@
 .level2 h1 { font-size: 2.0em; }
+.reveal pre code {
+	padding: 0;
+}

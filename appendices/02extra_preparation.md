@@ -1,4 +1,4 @@
-# Post-carpentry installation Instructions
+# Post carpentry installation
 
 ## Introduction
 
