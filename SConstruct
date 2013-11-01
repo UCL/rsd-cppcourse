@@ -7,12 +7,12 @@ env=Environment()
 env.Append(BUILDERS={'PandocLatex':pandoc_latex})
 intro=Glob("introduction/*.md")
 sessions={}
-for session in range(1,4):
+for session in range(1,5):
 	sessions["session{session}".format(session=session)]=Glob("session{session}/*.md".format(session=session))
 appendices=Glob("appendices/*.md")
 sessions["intro"]=intro
 sessions["appendices"]=appendices
-session_names=["intro", "session1", "session2","session3","appendices"]
+session_names=["intro", "session1", "session2","session3","session4","appendices"]
 notes=env.PandocLatex('CPP.pdf',[sessions[name] for name in session_names])
 Depends(notes,'report.latex')
 

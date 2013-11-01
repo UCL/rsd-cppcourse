@@ -14,7 +14,8 @@ Yet most of the code usually deals with other things:
 * Checking for validity
 * Reporting on progress
 
-Mistakes here can ruin your results just as much as a mistake in the "scientific kernel".
+
+**Mistakes here can ruin your results just as much as a mistake in the "scientific kernel".**
 
 Exercise for the day
 ----------------------
@@ -30,7 +31,7 @@ The file format you choose is up to you.
 We have defined a test scaffold, and a basic parser class for you to fill in.
 There's no need to write the boiler-plate yourself this time.
 
-The tag for the scaffold code is .
+The tag for the [scaffold](https://github.com/UCL/rsd-cppcourse-example/compare/e541d01...v3.2) is [`v3.2`](https://github.com/UCL/rsd-cppcourse-example/blob/v3.2/reactor/)
 
 The next few slides will introduce some concepts you'll want to use in completing this task.
 
@@ -39,10 +40,10 @@ Working with the provided tests
 
 We have provided a bunch of tests, which are, in tag , failing. Your task in the exercises today will be to implement three methods:
 
-``` C++
-ReactionSystemParser::NewOrFind()
-ReactionSystemParser::ParseLine()
-ReactionSystemParser::FromStream()
+``` cpp
+ReactionSystemParser::NewOrFind();
+ReactionSystemParser::ParseLine();
+ReactionSystemParser::FromStream();
 ```
 
 until the tests pass.
@@ -50,31 +51,40 @@ until the tests pass.
 Recovering previously defined species
 -------------------------------------
 
-A key design decision you will face is whether to separately define the list of species,
-perhaps at the beginning of the file, or to define each species the first time is encountered in the list of reactions.
+A key design decision you will face is whether to 
 
-Either way, you will want to ensure that you can recover the single unique species created for a given name of species. The scaffold we have provided assumes that you will create a method called "NewOrFind" with the job of:
+* Separately define the list of species, perhaps at the beginning of the file, or...
+* Sefine each species the first time is encountered in the list of reactions.
 
-If a species with a given name already exists, you will need to return it.
-If a species with a given name doesn't already exist, you will need to create it.
+Either way, you will want to ensure that you can recover the single unique species created for a given name of species. 
 
-In order to do this, you will need a data structure called a "map".
+New Or Find
+-----------
+
+The scaffold we have provided assumes that you will create a method called `NewOrFind` with the job of:
+
+* If a species with a given name already exists, you will need to return it.
+* If a species with a given name doesn't already exist, you will need to create it.
+
+In order to do this, you will need a data structure called a `map`.
 
 Maps
 ----
 
 A map is an associative array. It works like an array, except the "key" you use to look up an entry is not a number, as in:
 
-``` C++
-std::vector<double> my_array();
+``` cpp
+#include <vector>
+std::vector<double> my_array;
 ...
 double x = my_array[5];
 ```
 
 but can be (almost) any type:
 
-```C++
-std::map<std::string, double> my_map();
+``` cpp
+#include <map>
+std::map<std::string, double> my_map;
 ...
 double x = my_map["banana"];
 ```
@@ -86,9 +96,9 @@ Inserting into a map
 
 To add to a map, you can just do:
 
-```C++
+```cpp
 my_map["some_key"]=4.3;
-ASSERT_EQ(4.3,my_map["some_key"]);
+ASSERT_EQ(4.3, my_map["some_key"]);
 ```
 
 this will overwrite any previous content.
@@ -98,18 +108,19 @@ Finding out if a map has an entry
 
 Doing `some_map[some_key]` by itself will *not* return an error or an empty value. It'll just happily return the default value for the type and return:
 
-``` C++
-std::map<double,std::string> empty_map;
-ASSERT_EQ("",empty_map["banana"]);
+``` cpp
+std::map<std::string,std::string> empty_map;
+ASSERT_EQ("", empty_map["apple"]);
 ```
 
 To investigate a map without changing it, you need to use `find`. This returns an *iterator* to the found object, or `map::end()` if one is missing:
 
-``` C++
-std::map<double,std::string> empty_map;
-ASSERT_EQ(empty_map::end(),empty_map.find("banana"));
-empty_map["banana"]=4.3;
-ASSERT_EQ(4.3,*empty_map.find("banana"));
+``` cpp
+std::map<std::string,double> my_map;
+ASSERT_EQ(my_map.end(), my_map.find("orange"));
+empty_map["orange"]=4.3;
+ASSERT_EQ(4.3, my_map.find("orange")->second);
+ASSERT_EQ("orange", my_map.find("orange")->first);
 ```
 
 Using a hash for the parser
@@ -122,7 +133,7 @@ A reminder on streams
 
 Eventually, we will hook this code up to actually read from real files. However, we're going to be writing tests for this code using `std::stringstream`:
 
-``` C++
+``` cpp
 std::istringstream buffer(
 	"Some example\n"
 	"File content\n"
@@ -130,7 +141,8 @@ std::istringstream buffer(
 	);
 ```
 
-It's up to you once you've defined your file format, to fill in the example text for your file format. 
+It's up to you once you've defined your file format, to fill in the example text for your file format. You might find the ability to turn a string into a stream useful in your
+solution.
 
 The example system
 ------------------
@@ -138,7 +150,9 @@ The example system
 The test expectations assume this system is the one used in the examples:
 
 $A+B \overset{2.0}{\rightarrow} C+D$
+
 $C  \overset{3.0}{\rightarrow} E+F$
+
 $A \overset{5.0}{\rightarrow} C$
 
 You should fill in the text for your chosen file format appropriately.
@@ -151,7 +165,7 @@ Reading from a stream
 
 We already saw that we can read from a stream by words, separated by spaces, with `>>`
 
-``` C++
+``` cpp
 std::string first_word;
 input_stream >> first_word;
 EXPECT_EQ("Write",first_word);
@@ -166,7 +180,7 @@ We want to keep absorbing from a stream until it is empty. Once the stream is em
 
 So we can loop, and keep getting lines from a file, with:
 
-``` C++
+``` cpp
 while (source.good())
 {
 	std::string line;
@@ -176,6 +190,25 @@ while (source.good())
 
 Where `source` is some stream. 
 
+Breaking from Loops
+-------------------
+
+You might need, in your solution, needing to exit early from a loop:
+
+``` cpp
+while (true){
+	// Continue comes to here
+	...
+	if (condition_for_skipping_this_cycle) continue;
+	...
+	if (condition_for_stopping) break;
+	...
+}
+// Break comes to here.
+```
+
+This works in `for` loops as well.
+
 Manipulating strings
 --------------------
 
@@ -183,13 +216,16 @@ You might find yourself, if you use `getline`, wanting to manipulate strings.
 
 Boost provides some [helpful functions](http://www.boost.org/doc/libs/1_54_0/doc/html/string_algo/usage.html). First, to remove whitespace:
 
-``` C++
-std::string content=" Hello \n"
-EXPECT_EQ("Hello",boost::trim(content));
+``` cpp
+#include <boost/algorithm/string/trim.hpp>
+std::string content=" Hello \n";
+boost::trim(content)
+EXPECT_EQ("Hello",content);
 ```
 
 And to split up a string:
-``` C++
+``` cpp
+#include <boost/algorithm/string.hpp>
 std::string content2=" Apple, Pear, Orange";
 std::vector<std::string> broken;
 boost::split(broken,content2,boost::is_any_of(","));
@@ -201,16 +237,19 @@ Turning strings into numbers
 
 Without Boost, reliably turning a string into a number involves using stream IO:
 
-```C++
+``` cpp
 string content3="1.5";
 std::istringstream buffer(content3);
 double x;
 buffer >> x;
+ASSERT_EQ(x,1.5);
 ```
 
 Boost provides a `lexical cast` to do this more prettily:
-```C++
-x=boost::lexical_cast<double>(content3);
+``` cpp
+#include <boost/lexical_cast.hpp>
+double a=boost::lexical_cast<double>(content3);
+ASSERT_EQ(a,1.5);
 ```
 
 Error handling
@@ -234,7 +273,7 @@ supplied variables.
 
 So we can return two values from a function like this:
 
-```C++
+``` cpp
 void myfunction(double & out1, double & out2){...};
 double return_one;
 double return_two;
@@ -253,3 +292,12 @@ You have two choices for ParseReaction: you might want to implement it being sup
 you might want to use for either solution.
 
 Then, implement FromStream to call ParseReaction and put it all together.
+
+My Solutions
+------------
+
+I have two solutions.
+
+The [first](https://github.com/UCL/rsd-cppcourse-example/compare/v3.2...v3.3) uses a stringstream to parse the reaction line. The tag is [`v3.3`](https://github.com/UCL/rsd-cppcourse-example/blob/v3.3/reactor/)
+
+The [second](https://github.com/UCL/rsd-cppcourse-example/compare/v3.3...v3.4) uses boost string manipulation to parse the reaction line. The tag is [`v3.4`](https://github.com/UCL/rsd-cppcourse-example/blob/v3.4/reactor/)
