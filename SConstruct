@@ -1,10 +1,11 @@
-import os
+import rsdpandoc.builders
+import rsdpandoc.globbers
+        
+env=Environment(tools=['default',rsdpandoc.builders.add_builders])
+#env["HavePIL"]=True
+#env["HaveWSD"]=True
+#env["HaveWebKit"]=True
 
-pandoc_latex=Builder(action='pandoc --template=report -V documentclass=scrartcl -V'+
-	' links-as-notes -V linkcolor="uclmidgreen" --number-sections $SOURCES -o $TARGET')
-
-env=Environment()
-env.Append(BUILDERS={'PandocLatex':pandoc_latex})
 intro=Glob("introduction/*.md")
 sessions={}
 for session in range(1,6):
@@ -13,14 +14,5 @@ appendices=Glob("appendices/*.md")
 sessions["intro"]=intro
 sessions["appendices"]=appendices
 session_names=["intro", "session1", "session2","session3","session4","session5","appendices"]
-notes=env.PandocLatex('CPP.pdf',[sessions[name] for name in session_names])
-Depends(notes,'report.latex')
 
-pandoc_slides=Builder(action='pandoc -t revealjs -s -V theme=beige'+
-	' --css=beige.css'+
-	' --css=slidetheme.css'+
-	' --mathjax '+
-	' -V revealjs-url=http://lab.hakim.se/reveal-js/'+
-	' $SOURCES -o $TARGET')
-env.Append(BUILDERS={'PandocSlides':pandoc_slides})
-slides=env.PandocSlides("reveal/index.html",[sessions[name] for name in session_names])
+rsdpandoc.globbers.standard_layout([sessions[name] for name in session_names],env)
