@@ -12,5 +12,5 @@ sources = [
 	Glob("appendices/*.md")
 ]
 
-rsdpandoc.globbers.reveal_layout(sources,env)
+rsdpandoc.globbers.mixed_html_layout(sources,env)
 #rsdpandoc.globbers.latex_layout(sources,env)
