@@ -15,4 +15,7 @@ sessions["intro"]=intro
 sessions["appendices"]=appendices
 session_names=["intro", "session1", "session2","session3","session4","session5","appendices"]
 
-rsdpandoc.globbers.standard_layout([sessions[name] for name in session_names],env)
+sources=[sessions[name] for name in session_names]
+
+rsdpandoc.globbers.reveal_layout(sources,env)
+#rsdpandoc.globbers.latex_layout(sources,env)
