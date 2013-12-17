@@ -234,7 +234,7 @@ We can use a `#ifdef` or `#ifndef` statement to produces "conditional compilatio
 With the definition of the macro inside the conditional block, we get a piece of code which is guaranteed to be compiled only once per "compilation unit":
 
 ``` cpp
-#infdef ONCE_FILE_NAME
+#ifndef ONCE_FILE_NAME
 #define ONCE_FILE_NAME
 // Code here safe from multiple compilation
 #endif // ONCE_FILE_NAME

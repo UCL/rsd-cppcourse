@@ -12,7 +12,8 @@
 *.la
 *.a
 
-CPP.pdf
-CPP.html
-CPP.tex
+pdf
+reveal
+assets
+report.latex
 .sconsign.dblite
