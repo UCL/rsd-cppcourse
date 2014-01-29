@@ -34,7 +34,7 @@ brew install cmake
 
 ## Windows Users ##
 
-## Subversion
+## Subversion
 
 Install [subversion](http://sourceforge.net/projects/win32svn/)
 

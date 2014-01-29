@@ -61,7 +61,7 @@ which are offered regularly around the world.
 How to follow the course
 ------------------------
 
-First, follow the instructions listed in [preparing for the course](../appendices/preparation.md).
+First, follow the provided [installation instructions][Installation Instructions].
 
 The course is divided into five sessions, each of which will be one afternoon's training when delivered in person.
 These can be followed on line, without a hands-on-trainer. If you run into any problems, 

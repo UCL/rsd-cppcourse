@@ -15,6 +15,9 @@ Here, `rhs_function` must be something that can be called with `operator()`, a f
 
 The function is passed to the integrator to determine the rates given the current values.
 
+Similarly, `observe_integration` is something that should be called every timestep to
+print or store the result of each step.
+
 An example wrapper class
 ------------------------
 
@@ -34,6 +37,21 @@ public:
         system.GetRatesGivenConcentrations(x,dxdt);
     }
 };
+```
+
+An example Observer
+-------------------
+
+```cpp
+void observe_integration(const std::vector<double> &concentrations, 
+	const double time)
+{
+	std::cout << time << ": [" << std::flush;
+	for (unsigned int i=0; i<concentrations.size();i++){
+		std::cout << concentrations[i] <<  ", " << std::flush;
+	}
+	std::cout << "]" << std::endl;
+}
 ```
 
 Exercise: A solver test
