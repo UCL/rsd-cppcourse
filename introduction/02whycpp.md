@@ -20,7 +20,7 @@ getting hold of and using third-party libraries is much worse.
 No Good Choice
 --------------
 
-There is no great choice of language for scientific programming. Python, Perl, and MATLAB are too slow, C and FORTRAN are insufficiently flexible and expressive, and C++ is just too darn complicated and hard. Of these unpleasant choices, however, we believe C++ is the best choice if both performance and expressiveness are important to your work.
+There is no great choice of language for scientific programming. Python, Perl, and MATLAB are too slow, C and Fortran are insufficiently flexible and expressive, and C++ is just too darn complicated and hard. Of these unpleasant choices, however, we believe C++ is the best choice if both performance and expressiveness are important to your work.
 
 C++ from Python, MATLAB, Perl, or Ruby: The Bad
 -----------------------------------------------
@@ -55,7 +55,7 @@ C++ from Python, MATLAB, Perl, or Ruby: The Good
 
 However, compared to these languages, C++ can be a **lot faster to run**. 
 
-C++, like C and FORTRAN, is a compiled language,
+C++, like C and Fortran, is a compiled language,
 where the code you type is not run directly, but translated into machine code before being run.
 
 Compiled is not necessarily faster
@@ -63,7 +63,7 @@ Compiled is not necessarily faster
 
 This speed is the main reason to try using a compiled language. However, even this is not the final story: good use of
 non-compiled languages can produce code that is nearly as fast, and bad use of C++ can produce code which is slow.
-Some modern languages with "just in time" compilation like Java and Julia can sometimes be nearly as fast as FORTRAN.
+Some modern languages with "just in time" compilation like Java and Julia can sometimes be nearly as fast as Fortran.
 
 Compiled languages for high-performance
 ----------------------------------------
@@ -72,7 +72,7 @@ Because it's easy to write very slow code with non-compiled languages, parallel 
 for running on supercomputers, are often written in compiled languages, and the tools for accessing parallelism (like OpenMP and MPI)
 are better in these languages.
 
-So, if you want code that runs really fast, especially on state of the art supercomputers, then you might want to use C++, C, or FORTRAN.
+So, if you want code that runs really fast, especially on state of the art supercomputers, then you might want to use C++, C, or Fortran.
 
 C++11
 -----
@@ -111,7 +111,7 @@ we teach the old-style C++, but will occasionally mention the C++11 versions for
 C++ from C or Fortran: The Good
 -------------------------------
 
-If you're used to programming Python or Perl, C++, unlike C or FORTRAN, makes available some of the features you'll have grown to expect: 
+If you're used to programming Python or Perl, C++, unlike C or Fortran, makes available some of the features you'll have grown to expect: 
 
 * associative arrays (hashes)
 * linked lists
@@ -119,7 +119,7 @@ If you're used to programming Python or Perl, C++, unlike C or FORTRAN, makes av
 * stream-based IO,
 * object orientation. 
 
-Support for these, and for good programming practices like testing, is much stronger in C++ than in FORTRAN or C.
+Support for these, and for good programming practices like testing, is much stronger in C++ than in Fortran or C.
 
 C++ can be fairly readable
 --------------------------
@@ -130,15 +130,15 @@ In C++, I can do things like
 Moments::InertiaTensor(protein_database["amylase"].GetCoordinateArray());
 ```
 
-which is, in my view, easier to read than the equivalent might be in FORTRAN or C, and almost as pretty as it would be in Python.
+which is, in my view, easier to read than the equivalent might be in Fortran or C, and almost as pretty as it would be in Python.
 
 C++ from C or Fortran: The Bad
 ------------------------------
 
 Because C++ is much more complicated, it is harder for the compiler to produce really efficient machine code, so C++ programs tend on average to be a bit slower
-than FORTRAN code. 
+than Fortran code. 
 
-It is possible to craft C++ which is just as fast as C or FORTRAN, but naively used, C++ can often be slower. 
+It is possible to craft C++ which is just as fast as C or Fortran, but naively used, C++ can often be slower. 
 
 As always, it is a good idea to profile your code before attempting optimisation.
 
@@ -156,13 +156,13 @@ Are you sure you want to learn C++?
 C++ is:
 
 * Faster than Python, Perl, MATLAB, Mathematica or Ruby.
-* More expressive and flexible than FORTRAN or C.
+* More expressive and flexible than Fortran or C.
 
 
 But C++ is:
 
 * Complicated, error-prone, and difficult to learn.
-* Harder than C or FORTRAN to make really fast.
+* Harder than C or Fortran to make really fast.
 * More verbose and less expressive than Python, Perl, MATLAB, Mathematica or Ruby.
 * Tough to get running, with hard-to-install libraries and cumbersome build tools.
 
@@ -171,7 +171,7 @@ So, why C++?
 
 Our view is that despite these problems, C++ is a good choice for future scientific programmers to learn as a *second* scientific programming language: 
 
-* It introduces object orientation and dynamic data structures if you're coming from C or FORTRAN, 
+* It introduces object orientation and dynamic data structures if you're coming from C or Fortran, 
 * It introduces pointers, memory management, and strict typing if you're coming from Python or MATLAB. 
 
 If you're an aspiring computational scientist, you'll need to get to grips with all these concepts

@@ -27,7 +27,7 @@ Prerequisites
 
 In order to follow this course, you should at minimum already know:
 
-* How to program in some language, (such as Basic, Python, Ruby, MATLAB, or FORTRAN) including:
+* How to program in some language, (such as Basic, Python, Ruby, MATLAB, or Fortran) including:
   * Variables including arrays or vectors
   * For and while loops
   * If statements and case switches
