@@ -14,7 +14,9 @@ please [raise an issue in the GitHub repository](https://github.com/UCL/rsd-cppc
 Example Code
 ------------
 
-In each section, code you should be adding into your example will be shown like this:
+Sometimes, we will show code directly in these notes.
+
+Code you should be adding into your example will be shown like this:
 
 ``` cpp
 std::cout << "Hello world" << std::endl;
@@ -55,6 +57,20 @@ We will show output which is expected from the terminal like this:
 > Well done.
 > ```
 
+Online example code for the course
+-------------------------------
+
+We have prepared a standard solution for our example problem, and
+a scaffold for you to build your solution on.
+
+The code for our solution, as we gradually build it up, is all online on [GitHub](https://github.com/UCL/rsd-cppcourse-example).
+
+We will regularly link to a piece of our [finished code](https://github.com/UCL/rsd-cppcourse-example/tree/develop),
+to a particular [version of it](https://github.com/UCL/rsd-cppcourse-example/tree/7e64eaf60e76980577049708fe00c9dfb3e9bb8b),
+or to the [changes](https://github.com/UCL/rsd-cppcourse-example/commit/2bb59360f1744a8bc6f325288e91e260184a8c1e) we made in a particular piece of work.
+
+As with local links in these course notes, links to changes show removed lines in red, and added lines in green.
+
 The example problem
 -------------------
 
@@ -71,19 +87,7 @@ The example problem: ecology edition
 If you're not a chemist, this is exactly the same mathematics which is often used to describe the variation of populations of competing species,
 or many other kinds of problem. We've chosen this example because it's relevant to many different areas of research.
 
-The example code for the course
--------------------------------
 
-We have prepared a standard solution for the mass-action simulation problem for you to compare your work with, and
-a scaffold for you to build your solution on. We will now go through the work of getting the code onto your laptop.
-
-The code for our solution, as we gradually build it up, is all online on [GitHub](https://github.com/UCL/rsd-cppcourse-example).
-
-We will regularly link to a piece of our [finished code](https://github.com/UCL/rsd-cppcourse-example/tree/develop),
-to a particular [version of it](https://github.com/UCL/rsd-cppcourse-example/tree/7e64eaf60e76980577049708fe00c9dfb3e9bb8b),
-or to the [changes](https://github.com/UCL/rsd-cppcourse-example/commit/2bb59360f1744a8bc6f325288e91e260184a8c1e) we made in a particular piece of work.
-
-Links to changes show removed lines in red, and added lines in green.
 
 Fork the code on GitHub
 -----------------------
