@@ -1,6 +1,7 @@
 ---
 title: An Introduction to C++ for Research
 layout: default
+slidelink: false
 ---
 
 ##Introduction
