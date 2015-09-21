@@ -5,7 +5,7 @@ title: Course content
 How to follow the Course
 =========================
 
-First, follow the provided [installation instructions](99appendices).
+First, follow the provided [installation instructions](../99appendices).
 
 The course is offered occasionally as a hands-on course with an experienced research programmer as trainer.
 It can also be followed on line, without a hands-on-trainer. If you run into any problems,
