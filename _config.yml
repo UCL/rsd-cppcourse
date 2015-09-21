@@ -9,7 +9,7 @@ defaults:
   - scope: {path: ""}
     values: {layout: default, slidelink: true}
 
-baseurl: /training/cppcourse
+baseurl: /training/CPP
 
 crumbs:
   - link: http://www.ucl.ac.uk/ISD
