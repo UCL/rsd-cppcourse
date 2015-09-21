@@ -23,7 +23,7 @@ On RedHat based systems:
 
 Again, install the appropriate package with apt-get or yum (`subversion`)
 
-## CMake ##
+## CMake ##
 
 Again, install the appropriate package with apt-get or yum (`cmake`)
 

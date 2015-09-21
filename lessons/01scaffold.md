@@ -69,7 +69,7 @@ g++ hello_world.cpp
 
 However, this is misleading: directly using the compiler without a build tool will eventually become too difficult and cause a mess.
 
-## Using CMake
+## Using CMake
 
 Therefore, we are starting you off with a working scaffold, using the build tool **CMake** which hides a lot of the complexity of the compiling and linking process.
 

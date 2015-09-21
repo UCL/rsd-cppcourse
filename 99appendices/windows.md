@@ -11,7 +11,7 @@ Install [msysgit](http://code.google.com/p/msysgit/downloads/list?q=full+install
 
 Then install the [GitHub for Windows client](http://windows.github.com/).
 
-## Subversion
+## Subversion
 
 Install [subversion](http://sourceforge.net/projects/win32svn/)
 
@@ -39,13 +39,13 @@ It should install MinGW's package manager. On the left, select ``Basic Setup``, 
 ``mingw-gcc-g++`` and ``msys-base``. On some systems these package
 might be selected from start. Finally, click the installation menu and ``Apply Changes``.
 
-## Locating your install
+## Locating your install
 
 Now, we need to find out where Git and Notepad++ have been installed, this will be either in
 `C:/Program Files (x86)` or in `C:\ProgramFiles`. The former is the norm on more modern versions of windows.
 If you have the older version, replace `Program\ Files\ \(x86\)` with `Program\ Files` in the instructions below.
 
-## Telling Shell where to find the tools
+## Telling Shell where to find the tools
 
 We need to tell the new shell installed in this way where git and Notepad++ are.
 
